@@ -1,0 +1,21 @@
+.modalContent {
+  padding: 0px 0px 40px 0px;
+}
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+.label {
+  margin-bottom: 4px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #374151;
+}
+.searchButtonContainer{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+}

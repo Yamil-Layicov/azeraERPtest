@@ -1,0 +1,133 @@
+.checkboxItemWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.checkboxWrapper {
+  box-sizing: border-box;
+  --checkbox-height: 22px;
+  --bg-color: var(--bg-white);
+  position: relative;
+  display: inline-block;
+  width: var(--checkbox-height);
+  height: var(--checkbox-height);
+}
+
+/* Animations */
+@-moz-keyframes dothabottomcheck {
+  0% { height: 0; }
+  100% { height: calc(var(--checkbox-height) / 2); }
+}
+@-webkit-keyframes dothabottomcheck {
+  0% { height: 0; }
+  100% { height: calc(var(--checkbox-height) / 2); }
+}
+@keyframes dothabottomcheck {
+  0% { height: 0; }
+  100% { height: calc(var(--checkbox-height) / 2); }
+}
+@keyframes dothatopcheck {
+  0% { height: 0; }
+  50% { height: 0; }
+  100% { height: calc(var(--checkbox-height) * 1.2); }
+}
+@-webkit-keyframes dothatopcheck {
+  0% { height: 0; }
+  50% { height: 0; }
+  100% { height: calc(var(--checkbox-height) * 1.2); }
+}
+@-moz-keyframes dothatopcheck {
+  0% { height: 0; }
+  50% { height: 0; }
+  100% { height: calc(var(--checkbox-height) * 1.2); }
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.checkBox {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  border: calc(var(--checkbox-height) * 0.1) solid var(--border-muted);
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  transition: border-color ease 0.2s;
+  cursor: pointer;
+}
+
+.checkBox::before,
+.checkBox::after {
+  box-sizing: border-box;
+  position: absolute;
+  height: 0;
+  width: calc(var(--checkbox-height) * 0.2);
+  background-color: var(--primary-color);
+  display: inline-block;
+  transform-origin: left top;
+  border-radius: 5px;
+  content: " ";
+  transition: opacity ease 0.5;
+}
+
+.checkBox::before {
+  top: calc(var(--checkbox-height) * 0.72);
+  left: calc(var(--checkbox-height) * 0.41);
+  box-shadow: 0 0 0 calc(var(--checkbox-height) * 0.05) var(--bg-color);
+  transform: rotate(-135deg);
+}
+
+.checkBox::after {
+  top: calc(var(--checkbox-height) * 0.37);
+  left: calc(var(--checkbox-height) * 0.05);
+  transform: rotate(-45deg);
+}
+
+.hiddenInput:checked + .checkBox {
+  border-color: var(--primary-color);
+}
+
+.hiddenInput:checked + .checkBox::after {
+  height: calc(var(--checkbox-height) / 2);
+  animation: dothabottomcheck 0.2s ease 0s forwards;
+}
+
+.hiddenInput:checked + .checkBox::before {
+  height: calc(var(--checkbox-height) * 1.2);
+  animation: dothatopcheck 0.4s ease 0s forwards;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Dark Mode Support */
+:global([data-theme="dark"]) .checkboxWrapper {
+  --bg-color: var(--bg-container);
+}
+
+:global([data-theme="dark"]) .checkBox {
+  border-color: var(--text-muted);
+}
+
+:global([data-theme="dark"]) .hiddenInput:checked + .checkBox {
+  border-color: #dc2626 !important;
+}
+
+:global([data-theme="dark"]) .checkBox::before,
+:global([data-theme="dark"]) .checkBox::after {
+  background-color: #dc2626 !important;
+}
+
+:global([data-theme="dark"]) .label {
+  color: var(--text-primary);
+}

@@ -1,0 +1,100 @@
+.wrapper {
+  width: 100%;
+  margin-top: 24px;
+}
+
+/* Laptopda cədvəlin kəsilməməsi üçün sürüşdürmə konteyneri */
+.tableScroll {
+  width: 100%;
+  border-radius: 8px;
+  background: var(--bg-white, #ffffff);
+}
+
+.tableScroll table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1400px; 
+}
+
+.wrapper table th:nth-child(9),
+.wrapper table td:nth-child(9) {
+  white-space: normal !important;
+  word-break: break-word;
+  width: 250px !important;
+  max-width: 300px !important;
+  line-height: 1.4;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+
+/* Başlıqların hündürlüyü və şrifti */
+.wrapper table th {
+  padding: 12px 8px;
+  font-size: 13px;
+  background-color: #f9fafb;
+  color: #374151;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.azadEtBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.azadEtBtn:hover {
+  background: #4b5563;
+  color: white;
+  border-color: #4b5563;
+}
+
+.removeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light, #e5e7eb);
+  background: var(--bg-white, #ffffff);
+  color: #ef4444;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.removeBtn:hover {
+  background-color: #fef2f2;
+  border-color: #ef4444;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Laptop ekranları (1366px - 1536px) üçün son toxunuş */
+@media (max-width: 1600px) {
+  .wrapper table th, 
+  .wrapper table td {
+    font-size: 12.5px;
+    padding: 8px 6px;
+  }
+  
+  .azadEtBtn {
+    height: 28px;
+    font-size: 11px;
+  }
+}
+

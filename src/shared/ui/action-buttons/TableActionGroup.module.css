@@ -1,0 +1,51 @@
+.group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-end; 
+  width: auto;
+  position: relative;
+}
+
+.searchSlot {
+  overflow: hidden;
+  transition: max-width 0.3s ease-in-out, opacity 0.3s ease-in-out, width 0.3s ease-in-out, margin 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.searchSlotOpen {
+  max-width: 250px;
+  width: 200px;
+  opacity: 1;
+}
+
+.searchSlotClosed {
+  max-width: 0;
+  width: 0;
+  min-width: 0;
+  opacity: 0;
+  padding: 0;
+  border: none;
+  margin-left: -4px;
+  margin-right: -4px;
+}
+
+.searchSlot > * {
+  width: 100%;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .group {
+    width: auto;
+    flex-wrap: nowrap;
+  }
+  .searchSlotOpen {
+    max-width: 200px;
+    width: 200px;
+  }
+}

@@ -1,0 +1,110 @@
+.panelContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--bg-white);
+  overflow: hidden;
+}
+
+.panelHeader {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.panelTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.closeBtn:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.panelBody {
+  padding: 1.5rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.panelBody.noPadding {
+  padding: 0;
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formWrapper > * {
+  width: 100%;
+  min-width: 250px;
+}
+
+.panelFooter {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  gap: 1rem;
+  background-color: var(--bg-white);
+  flex-shrink: 0;
+}
+
+.activeButtonWrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.activeToggleBtn {
+  padding: 6px 16px !important;
+  font-size: 0.85rem !important;
+  height: 36px !important;
+}
+
+.footerButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.footerBtn {
+  padding: 6px 20px !important;
+  font-size: 0.85rem !important;
+  height: 36px !important;
+  min-width: 100px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .panelBody {
+    padding: 0 !important;
+  }
+
+  :global([data-theme="dark"]) .panelBody,
+  :global([data-theme="dark"]) .panelFooter {
+    background-color: var(--bg-container);
+  }
+}

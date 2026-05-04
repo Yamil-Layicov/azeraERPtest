@@ -1,0 +1,15 @@
+.nomenclature {
+  min-height: 100vh;
+}
+
+.content {
+  margin-top: 24px;
+  border-radius: 16px;
+  padding: 8px;
+  border: 1px solid #f0f0f0;
+}
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

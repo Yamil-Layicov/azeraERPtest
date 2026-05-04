@@ -1,0 +1,139 @@
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: var(--bg-white);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0;
+}
+
+.titleDivider {
+  height: 1px;
+  background-color: var(--border-light);
+  width: 100%;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.row + .row {
+  margin-top: 0.5rem;
+}
+
+.field {
+  flex: 2 1 0;
+  min-width: 0;
+}
+
+.label {
+  margin-bottom: 4px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #374151;
+}
+
+.fieldWideFact {
+  flex: 2 1 0;
+  min-width: 0;
+}
+
+.fieldWide {
+  flex: 2 1 0;
+  min-width: 0;
+}
+
+/* Ülke ve Şehir grubunu satırın %50'si yapıyoruz */
+.countryCityWrap {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+/* Grubun içindeki her bir input (Ölkə ve Şehir) %25 olmuş oluyor */
+.countryCityWrap > div {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Ünvan inputunu da satırın kalan %50'si yapıyoruz */
+.registrationAddressWrapper {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.checkboxWrap {
+  display: flex;
+  align-items: center;
+  margin-top: 1.75rem;
+  height: 40px;
+  flex: 0 0 440px;
+  margin-left: auto;
+  min-width: 0;
+}
+@media (max-width: 768px) {
+  .checkboxWrap {
+    flex: 0 0 100px;
+  }
+}
+
+.checkboxPlaceholder {
+  flex: 0 0 440px;
+  margin-left: auto;
+}
+@media (max-width: 768px) {
+  .checkboxPlaceholder {
+    flex: 0 0 100px;
+  }
+}
+
+
+
+@media (max-width: 1200px) {
+  .row {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .field,
+  .fieldWide,
+  .fieldWideFact,
+  .registrationAddressWrapper,
+  .checkboxWrap {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .checkboxWrap {
+    margin-top: 0.5rem;
+  }
+}

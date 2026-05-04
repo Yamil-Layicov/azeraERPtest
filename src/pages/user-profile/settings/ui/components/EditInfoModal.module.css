@@ -1,0 +1,24 @@
+.modalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  margin-top: 20px;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cancelButton {
+  min-width: 100px;
+}
+
+.saveButton {
+  min-width: 120px;
+}

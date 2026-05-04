@@ -1,0 +1,101 @@
+.wrapper {
+  width: 100%;
+  margin-top: 24px;
+}
+
+/* Laptopda cədvəlin kəsilməməsi üçün sürüşdürmə konteyneri */
+.tableScroll {
+  width: 100%;
+  border-radius: 8px;
+  background: var(--bg-white, #ffffff);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  box-shadow: none;
+}
+
+/* Qohumluq dərəcəsi (1. sütun) və FİN (3. sütun) - Yazı qədər olsun, sağdan boşluqla */
+.tableScroll table th:nth-child(1),
+.tableScroll table td:nth-child(1),
+.tableScroll table th:nth-child(3),
+.tableScroll table td:nth-child(3) {
+  width: 1%;
+  white-space: nowrap !important;
+  padding-right: 40px !important;
+}
+
+.tableScroll table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px;
+  table-layout: auto;
+}
+
+.tableScroll table th,
+.tableScroll table td {
+  white-space: nowrap; 
+  padding: 12px 10px;
+}
+
+/* Çox sətirli sütunlar: Qohum (2), Doğum yeri (4), Ünvan (5), İş yeri (6) */
+.tableScroll table td:nth-child(2),
+.tableScroll table td:nth-child(4),
+.tableScroll table td:nth-child(5),
+.tableScroll table td:nth-child(6) {
+  white-space: normal !important;
+  word-break: break-word;
+  min-width: 150px !important;
+  max-width: 250px !important;
+  line-height: 1.4;
+  vertical-align: middle;
+}
+
+/* Başlıqların da eyni hizada olması üçün */
+.tableScroll table th:nth-child(2),
+.tableScroll table th:nth-child(4),
+.tableScroll table th:nth-child(5),
+.tableScroll table th:nth-child(6) {
+  white-space: normal !important;
+  width: 200px !important;
+}
+
+/* Əməliyyat (7. sütun) - Genişliyin və boşluqların azaldılması */
+.wrapper table th:nth-child(7),
+.wrapper table td:nth-child(7) {
+  width: 80px !important;
+  min-width: 80px !important;
+  padding: 10px 4px !important;
+  text-align: center;
+}
+
+/* Başlıqların hündürlüyü və şrifti */
+.wrapper table th {
+  padding: 12px 8px;
+  font-size: 13px;
+  background-color: #f9fafb;
+  color: #374151;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Satır Renklendirme (WorkTable ilə eyni) */
+.pendingRow td {
+  background-color: #fefcbf !important; 
+}
+
+.approvedRow td {
+  background-color: #f0fff4 !important; 
+}
+
+.tableRow:hover td {
+  filter: brightness(0.95);
+}
+
+@media (max-width: 1600px) {
+  .wrapper table th, 
+  .wrapper table td {
+    font-size: 12.5px;
+    padding: 8px 6px;
+  }
+}

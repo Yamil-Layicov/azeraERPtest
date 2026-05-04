@@ -1,0 +1,158 @@
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow: visible !important;
+  position: relative;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Başlıq (Elmi dərəcə) – bold qalsın */
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0;
+}
+
+/* Input / Select / DatePicker dəyərləri – 14px, font-weight 400 */
+.section :global(input),
+.section :global(input::placeholder) {
+  font-weight: 400 !important;
+  font-size: 14px;
+  color: #101828;
+}
+.section :global(input::placeholder) {
+  color: #667085;
+  opacity: 1;
+}
+.section :global(span[data-placeholder="true"]) {
+  font-weight: 400 !important;
+  font-size: 14px;
+  color: #667085;
+  opacity: 1;
+}
+.section :global(button[aria-haspopup="listbox"] > span:first-of-type:not([data-placeholder="true"])) {
+  font-weight: 400 !important;
+  font-size: 14px;
+  color: #101828;
+}
+
+.titleDivider {
+  height: 1px;
+  background-color: var(--border-light);
+  width: 100%;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.row:focus-within {
+  z-index: 1000 !important;
+}
+
+.selectCol {
+  flex: 0 0 260px;
+  position: relative;
+  overflow: visible !important;
+}
+
+.dateCol {
+  flex: 0 0 220px;
+  position: relative;
+  overflow: visible !important;
+}
+
+.inputCol {
+  flex: 1;
+  min-width: 240px;
+  position: relative;
+  z-index: 1;
+}
+
+.inputCol :global(.formGroup) {
+  margin-bottom: 0;
+}
+
+.inputCol :global(label) {
+  display: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.removeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  background-color: #fff;
+  color: #ef4444;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.removeBtn:hover {
+  background-color: #fef2f2;
+  border-color: #ef4444;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: var(--bg-container);
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+  }
+
+  .selectCol,
+  .dateCol,
+  .inputCol {
+    width: 100%;
+    flex: none;
+    min-width: 0;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-end;
+    border-top: 1px solid var(--border-light);
+    padding-top: 0.75rem;
+    margin-top: 0.25rem;
+    height: auto;
+    margin-left: 0;
+  }
+}
+

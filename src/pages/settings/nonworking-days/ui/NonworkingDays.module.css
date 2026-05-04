@@ -1,0 +1,113 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.addButton {
+  padding: 0.3rem 1rem !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  border-radius: 3px !important;
+}
+
+.contentArea {
+  display: flex;
+  margin-top: 1rem;
+  gap: 1.5rem;
+}
+@media (max-width: 1200px) {
+  .contentArea {
+    flex-direction: column;
+  }
+}
+
+.leftColumn {
+  flex: 1;
+  min-width: 0;
+}
+
+.rightColumn {
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 10px;
+  align-self: flex-start;
+}
+@media (max-width: 1150px) {
+  .rightColumn {
+  flex: 0 0 200px;
+  }
+}
+
+.formCard {
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.formTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+:global([data-theme='dark']) .formTitle {
+  color: #fff;
+}
+
+.closeButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.closeButton:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.formBody {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+.emptyPanel {
+  min-height: 320px;
+}
+
+.divider {
+  width: 1px;
+  background-color: var(--border-light);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}

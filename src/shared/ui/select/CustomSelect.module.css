@@ -1,0 +1,669 @@
+/* src/components/CustomSelect/CustomSelect.module.css */
+.selectWrapper {
+  position: relative;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.selectTrigger {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.95rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  cursor: pointer;
+  user-select: none;
+  box-sizing: border-box;
+  background-color: var(--bg-white);
+  color: var(--text-primary);
+  font-family: inherit;
+  text-align: left;
+  overflow: hidden;
+  gap: 0.5rem;
+  min-width: 0;
+  height: 40px;
+}
+
+.selectTrigger:hover {
+  border-color: var(--border-muted);
+}
+
+.selectWrapper[data-is-open="true"] .selectTrigger {
+  outline: none;
+  border-color: var(--border-light);
+  box-shadow: none;
+}
+
+/* Error state */
+.selectWrapper.error .selectTrigger {
+  border-color: #d20606 !important;
+  box-shadow: none !important;
+}
+
+.errorMessage {
+  color: #d20606;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Dark mode error state */
+:global([data-theme="dark"]) .selectWrapper.error .selectTrigger {
+  border-color: #dc2626 !important;
+  box-shadow: none !important;
+}
+
+.selectedOption {
+  display: block;
+  flex: 1 1 0%;
+  color: var(--text-primary);
+  font-weight: 400; /* Reverted from 500 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  min-width: 50px !important;
+}
+
+/* MultiSelect styles - used by MultiSelect component */
+.selectedTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  flex-grow: 1;
+  overflow: visible;
+  align-items: center;
+  padding: 0.125rem 0;
+}
+
+.selectedTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.removeTagButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.removeTagButton:hover {
+  color: var(--text-primary);
+}
+
+.removeIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.arrowIcon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.arrowOpen {
+  transform: rotate(180deg);
+}
+
+.optionsContainer {
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background-color: var(--bg-white);
+  border-radius: var(--radius-md);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  z-index: 1051;
+  padding: 0.5rem;
+  border: 1px solid var(--border-light);
+  max-height: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.optionsContainer.openUpward {
+  filter: drop-shadow(0 -4px 8px rgba(0, 0, 0, 0.1));
+}
+
+:global([data-theme="dark"]) .optionsContainer {
+  border-color: var(--border-muted);
+}
+
+.optionsContainer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-light) transparent;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.optionsListWithSearch {
+  max-height: 200px;
+}
+
+.optionsContainer ul::-webkit-scrollbar {
+  width: 6px;
+}
+
+.optionsContainer ul::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.optionsContainer ul::-webkit-scrollbar-thumb {
+  background-color: var(--border-light);
+  border-radius: 3px;
+}
+
+.optionsContainer ul::-webkit-scrollbar-thumb:hover {
+  background-color: var(--border-muted);
+}
+
+.optionItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 400;
+  cursor: pointer;
+  gap: 0.5rem;
+  transition: background-color 0.15s ease;
+}
+
+.optionItem:hover {
+  background-color: #e5e7eb;
+}
+
+.optionItem.optionSelected {
+  background-color: var(--bg-light);
+}
+
+.optionItem.optionDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  color: var(--text-muted);
+}
+
+.optionItem.optionDisabled:hover {
+  background-color: transparent;
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border-light);
+  border-radius: 4px;
+  background-color: var(--bg-white);
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.optionItem.optionSelected .checkbox {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+:global([data-theme="dark"]) .optionItem:hover {
+  background-color: #4b5563;
+  color: #ffffff;
+}
+
+:global([data-theme="dark"]) .optionItem.optionDisabled {
+  opacity: 0.4;
+  color: var(--text-muted);
+}
+
+:global([data-theme="dark"]) .optionItem.optionDisabled:hover {
+  background-color: transparent;
+}
+
+:global([data-theme="dark"]) .selectTrigger:hover {
+  border-color: var(--border-muted);
+}
+:global([data-theme="dark"]) .selectTrigger {
+  border-color: var(--border-muted) !important;
+  color: #ffffff !important;
+}
+
+:global([data-theme="dark"]) .selectedOption {
+  color: #ffffff !important;
+}
+
+.optionName {
+  font-weight: 400; 
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.25;
+  flex: 1;
+  min-width: 0;
+}
+
+.optionRole {
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.groupLabel {
+  padding: 0.6rem 0.75rem 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  background-color: var(--bg-light);
+  margin-top: 0.25rem;
+  margin-bottom: 0.125rem;
+  cursor: default;
+}
+
+.groupLabel:first-child {
+  margin-top: 0;
+}
+
+.groupedItem {
+  padding-left: 1.5rem !important;
+}
+
+.noBorderLeft .selectTrigger {
+  border: none !important;
+  border-left: 1px solid var(--border-light) !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  background-color: var(--bg-light) !important;
+}
+
+.noBorderLeft .selectTrigger:hover {
+  background-color: var(--bg-container) !important;
+  border-left: 1px solid var(--border-light) !important;
+}
+
+.noBorderLeft .optionsContainer {
+  border-top-left-radius: 0px !important;
+}
+
+/* ... Mövcud kodlar ... */
+
+/* === YENİ COMPACT VARIANT (32px hündürlük, 100% genişlik) === */
+.compact .selectTrigger {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 0.75rem; /* Vertikal paddingi azaldırıq */
+  font-size: 0.9rem;
+  height: 31px;
+  min-height: 31px;
+}
+
+/* Ok işarəsini biraz kiçildirik */
+.compact .arrowIcon {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+/* Seçim siyahısındakı elementləri uyğunlaşdırırıq */
+.compact .optionItem {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+/* Axtarış inputunu uyğunlaşdırırıq */
+.compact .searchInput {
+  padding: 0.35rem 0.75rem 0.35rem 2.25rem;
+  font-size: 0.9rem;
+}
+
+.compact .searchIcon {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+/* SELECT-OPTION Navbar variant */
+.navbar .selectTrigger {
+  padding: 0.35rem 1rem;
+  font-size: 0.8rem;
+  height: 30px;
+  max-width: 250px;
+}
+
+.navbar .optionItem {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+.navbar .arrowIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.navbar .optionsContainer {
+  padding: 0.5rem;
+}
+
+/* Əgər search varsa onun da inputunu uyğunlaşdıraq */
+.navbar .searchInput {
+  padding: 0.5rem 0.75rem 0.5rem 2.25rem;
+  font-size: 0.9rem;
+}
+
+/* Navbar variantı üçün Hover effekti */
+.navbar .optionItem:hover {
+  background-color: #f3f4f6; /* Açıq boz hover */
+  color: var(--text-primary);
+}
+
+/* Navbar variantı üçün Seçilmiş (Active) element */
+.navbar .optionItem.optionSelected {
+  background-color: #e0f2fe; /* Çox açıq mavi fon (Active state) */
+  color: #0284c7; /* Tünd mavi yazı rəngi */
+  font-weight: 600; /* Yazı qalın olsun ki, seçildiyi bilinsin */
+}
+
+/* Seçilmiş elementin içindəki 'role' yazısının rəngini də uyğunlaşdıraq */
+.navbar .optionItem.optionSelected .optionRole {
+  color: #0ea5e9; /* Bir az daha açıq mavi */
+}
+
+/* Seçilmiş elementin üzərinə gələndə rəngi dəyişməsin (sabit qalsın) */
+.navbar .optionItem.optionSelected:hover {
+  background-color: #e0f2fe;
+}
+
+/* SELECT-OPTION Normal variant */
+.form .selectTrigger {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  height: 40px;
+  min-height: 40px;
+}
+
+/* MultiSelect form variant - allow height to grow */
+.form:has(.selectedTags) .selectTrigger {
+  height: auto;
+  min-height: 40px;
+  align-items: flex-start;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.form:has(.selectedTags) .arrowIcon {
+  align-self: center;
+  margin-top: 0.125rem;
+}
+
+.form .optionItem {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.9rem;
+  min-height: 36px;
+}
+
+.form .arrowIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.form .optionsContainer {
+  padding: 0.5rem;
+}
+
+/* --- DƏYİŞİKLİK BURADADIR --- */
+.disabled .selectTrigger {
+  background-color: var(--bg-container);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  opacity: 0.8;
+  box-shadow: none;
+}
+
+.disabled .selectTrigger:hover {
+  border-color: var(--border-light);
+}
+
+:global([data-theme="dark"]) .disabled .selectTrigger {
+  opacity: 0.5;
+}
+
+:global([data-theme="dark"]) .checkbox {
+  background-color: var(--bg-container);
+  border-color: var(--border-muted);
+  color: var(--primary-color);
+}
+
+:global([data-theme="dark"]) .optionItem.optionSelected .checkbox {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+:global([data-theme="dark"]) .selectedTag {
+  background-color: var(--bg-container);
+  border-color: var(--border-muted);
+  color: var(--text-primary);
+}
+
+:global([data-theme="dark"]) .removeTagButton {
+  color: var(--text-muted);
+}
+
+:global([data-theme="dark"]) .removeTagButton:hover {
+  color: var(--text-primary);
+}
+
+.prefixIcon {
+  width: 1.25rem; /* 20px */
+  height: 1.25rem;
+  color: var(--text-secondary); /* DateRangePicker ilə eyni rəng olsun */
+  margin-right: 0.5rem; /* 8px ara məsafəsi */
+  flex-shrink: 0;
+}
+
+/* Dark mode üçün */
+:global([data-theme="dark"]) .prefixIcon {
+  color: var(--text-muted);
+}
+
+/* --- YENİ SADƏLƏŞDİRİLMİŞ CLEAR BUTTONS --- */
+
+.clearButton,
+.searchClearButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #9ca3af;
+  transition: color 0.2s ease;
+  flex-shrink: 0;
+  z-index: 10;
+  line-height: 0;
+  border-radius: 50%;
+}
+
+.clearButton {
+  margin-right: 6px;
+}
+
+.searchClearButton {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.clearButton:hover,
+.searchClearButton:hover {
+  color: #ef4444;
+}
+
+/* İkonun ölçüsü - Daha böyük və görünən */
+.clearIcon,
+.searchClearIcon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2px;
+}
+
+:global([data-theme="dark"]) .clearButton,
+:global([data-theme="dark"]) .searchClearButton {
+  color: #6b7280;
+}
+
+:global([data-theme="dark"]) .clearButton:hover,
+:global([data-theme="dark"]) .searchClearButton:hover {
+  background-color: transparent;
+  color: #ef4444;
+}
+
+/* ========== AXTARİŞ STİLLƏRİ ========== */
+.searchWrapper {
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-light);
+  flex-shrink: 0;
+}
+
+.searchInputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 0.75rem;
+  width: 1rem;
+  height: 1rem;
+  color: var(--text-muted);
+  pointer-events: none;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+  font-size: 0.9rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+  font-family: inherit;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.searchInput:focus {
+  border-color: #5b9bd1;
+  background-color: var(--bg-white);
+  box-shadow: 0 0 0 3px rgba(91, 155, 209, 0.1);
+}
+
+.searchInput::placeholder {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.noResults {
+  padding: 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+  cursor: default;
+}
+
+.loadingItem {
+  padding: 10px 12px;
+  color: #666;
+  font-size: 13px;
+  text-align: center;
+  background-color: #f9fafb;
+}
+
+.noResults:hover {
+  background-color: transparent;
+}
+
+/* Dark mode for search */
+:global([data-theme="dark"]) .searchWrapper {
+  border-bottom-color: var(--border-muted);
+}
+
+:global([data-theme="dark"]) .searchIcon {
+  color: var(--text-muted);
+}
+
+:global([data-theme="dark"]) .searchInput {
+  background-color: var(--bg-container);
+  border-color: var(--border-muted);
+  color: var(--text-primary);
+}
+
+:global([data-theme="dark"]) .searchInput:focus {
+  border-color: #5b9bd1;
+  background-color: #1f2937;
+  box-shadow: 0 0 0 3px rgba(91, 155, 209, 0.2);
+}
+
+/* Form variant üçün axtarış */
+.form .searchInput {
+  padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+  font-size: 0.9rem;
+}
+
+/* Navbar variant üçün axtarış */
+.navbar .searchInput {
+  padding: 0.375rem 0.5rem 0.375rem 2rem;
+  font-size: 0.85rem;
+}
+
+.navbar .searchIcon {
+  left: 0.5rem;
+  width: 0.9rem;
+  height: 0.9rem;
+}

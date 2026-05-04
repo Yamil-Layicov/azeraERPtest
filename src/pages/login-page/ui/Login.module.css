@@ -1,0 +1,399 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #121212;
+}
+
+.loginBox {
+    background: var(--bg-container);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: var(--shadow-xl), var(--shadow-lg);
+    padding: var(--spacing-2xl) var(--spacing-3xl);
+    border-radius: var(--radius-xl);
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 170px;
+    object-fit: cover;
+    margin-bottom: var(--spacing-md);
+}
+
+.formGroup {
+    margin-bottom: var(--spacing-md);
+    text-align: left;
+}
+
+.passwordWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+/* Dark mode label override */
+:global([data-theme="dark"]) .label {
+    color: var(--text-primary) !important;
+}
+
+.input {
+    width: 100%;
+    padding: var(--spacing-md) 14px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    font-size: var(--text-lg);
+    box-sizing: border-box;
+    background: var(--bg-white);
+    color: var(--text-secondary);
+}
+.input:focus {
+    outline: none;
+    border-color: var(--bg-light);
+    box-shadow: 0 0 0 1px rgba(177, 4, 13, 0.116);
+    background: var(--bg-light);
+}
+.input::placeholder {
+    color: var(--text-muted);
+}
+
+.passwordToggle {
+    position: absolute;
+    right: 10px;
+    background: transparent;
+    border: none;
+    padding: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-muted);
+    border-radius: 4px;
+}
+.passwordToggle:focus {
+    outline: none;
+    box-shadow: none;
+}
+.passwordToggle:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(83, 91, 242, 0.12);
+    color: var(--text-primary);
+}
+.passwordToggle:hover {
+    color: var(--text-primary);
+}
+
+.fieldError {
+    color: #dc2626;
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 0;
+    display: block;
+    font-weight: 500;
+    padding-left: 5px;
+}
+
+.errorMessage {
+    color: #dc2626;
+    margin-bottom: var(--spacing-xl);
+    margin-top: var(--spacing-md);
+    min-height: 20px; 
+    font-size: 12px;
+}
+
+.submitButton {
+    width: 50%;
+    margin: 0 auto;
+    padding: 6px;
+    border: none;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+    color: var(--text-white);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+.submitButton:hover {
+    background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-dark) 100%);
+    box-shadow: var(--shadow-primary-hover);
+    transform: translateY(-5px);
+}
+.submitButton:active {
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-3px);
+}
+.submitButton:disabled {
+    background: var(--border-muted);
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.optionsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    font-size: var(--text-sm);
+    padding: 0 5px;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.checkboxLabel input[type="checkbox"] {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--border-muted);
+    border-radius: 3px;
+    margin-right: var(--spacing-sm);
+    position: relative;
+    cursor: pointer;
+    background: var(--bg-white);
+}
+
+.checkboxLabel input[type="checkbox"]:checked {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkboxLabel input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-white);
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.checkboxLabel input[type="checkbox"]:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(184, 3, 12, 0.1);
+}
+
+.forgotPassword {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.forgotPassword:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+.copyright {
+    color: rgba(177, 175, 175, 0.637);
+    font-size: 13px;
+    margin-top: var(--spacing-xl);
+    text-align: center;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; 
+        justify-content: center;
+        align-items: center;
+        background: #121212;
+    }
+    
+    .loginBox {
+        width: 100%;
+        max-width: 400px; 
+        padding: 32px 24px; 
+        margin: 0;
+        border-radius: 20px; 
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2); 
+        backdrop-filter: blur(30px); 
+        border: 1px solid rgba(255, 255, 255, 0.1); 
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+    
+    .logo img {
+        width: 170px; 
+    }
+    
+    .formGroup {
+        margin-bottom: 20px; 
+    }
+    
+    .label {
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .input {
+        padding: 14px 16px; 
+        font-size: 16px; 
+        height: 52px; 
+        border-radius: 12px;
+    }
+
+    .passwordWrapper .input {
+        padding-right: 45px; 
+    }
+
+    .passwordToggle {
+        top: 50%;
+        transform: translateY(-50%);
+        right: 12px;
+        padding: 8px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .optionsContainer {
+        margin: 8px 0 32px 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .checkboxLabel {
+        font-size: 14px;
+        gap: 8px; 
+    }
+    
+    .checkboxLabel input[type="checkbox"] {
+        width: 18px; 
+        height: 18px;
+        margin-right: 0;
+    }
+    
+    .forgotPassword {
+        font-size: 14px;
+    }
+    
+    .submitButton {
+        width: 40%;
+        padding: 0;
+        font-size: 16px;
+        border-radius: 12px;
+        margin-top: 10px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+    
+    .errorMessage {
+        margin-bottom: 20px;
+        margin-top: -10px;
+        font-size: 13px;
+        text-align: center;
+    }
+    
+    .copyright {
+        margin-top: 40px;
+        font-size: 12px;
+        opacity: 0.5;
+    }
+}
+
+.iconWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.lockIconCircle {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    background-color: #b8030c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lockIcon {
+    width: 68px;
+    height: 68px;
+    color: white;
+}
+
+:global([data-theme="dark"]) .lockIconCircle {
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
+}
+
+.newPasswordTitle {
+    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 0;
+    margin: 1rem 0 3rem 0 !important;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.secondaryBtn {
+    background: #4b5563 !important;
+    box-shadow: none !important;
+    max-width: 100px !important;
+}
+
+.secondaryBtn:hover {
+    background: #374151 !important;
+    transform: translateY(-2px);
+}

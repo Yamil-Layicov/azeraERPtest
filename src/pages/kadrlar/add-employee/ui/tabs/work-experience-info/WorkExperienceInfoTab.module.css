@@ -1,0 +1,59 @@
+.container {
+  padding: 24px 0;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #101828;
+  margin-bottom: 24px;
+}
+
+.modalBody {
+  padding: 20px;
+}
+
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+.workTable{
+  margin-top: 14px !important;
+}
+
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 20px;
+  border-top: 1px solid #eaeaea;
+}
+
+.azadFormFields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.modalField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modalField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+
+@media (max-width: 600px) {
+  .azadFormFields {
+    grid-template-columns: 1fr;
+  }
+}

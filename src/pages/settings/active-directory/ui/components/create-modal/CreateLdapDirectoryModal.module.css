@@ -1,0 +1,53 @@
+.modal {
+  /* Modal styles */
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.checkboxGroup {
+  display: flex;
+  gap: 24px;
+  padding: 8px 0;
+}
+
+.checkboxSingle {
+  padding: 8px 0;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-primary, #333);
+  
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--primary-color, #007bff);
+  }
+  
+  span {
+    user-select: none;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color, #e0e0e0);
+  margin-top: 20px;
+}
+
+.footerButton {
+  min-width: 120px;
+}

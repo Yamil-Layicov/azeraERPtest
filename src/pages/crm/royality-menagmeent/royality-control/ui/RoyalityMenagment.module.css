@@ -1,0 +1,118 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.contentWrapperLayout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 6px;
+}
+
+.sidebarContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--bg-white);
+  padding: 1rem;
+  border-radius: 20px;
+  position: sticky;
+  top: 2rem;
+}
+
+.mainContentWrapper {
+  border-left: 1px solid var(--border-light);
+  min-height: 500px;
+}
+
+.sidebarButton {
+  background: transparent;
+  border: none;
+  padding: 0.85rem 1.25rem;
+  color: var(--text-secondary, #6b7280);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.sidebarButton:hover:not(.activeSidebarButton) {
+  color: var(--text-primary, #111827);
+  border: 1px solid var(--primary-color);
+}
+
+:global([data-theme="dark"]) .sidebarButton:hover:not(.activeSidebarButton) {
+  color: #f9fafb;
+  border: 1px solid var(--primary-dark);
+}
+
+.activeSidebarButton {
+  background-color: var(--primary-color);
+  color: white !important;
+  transform: translateX(4px);
+}
+
+:global([data-theme="dark"]) .activeSidebarButton {
+  background-color: var(--primary-dark);
+}
+
+.sidebarIcon {
+  width: 22px;
+  height: 22px;
+  transition: color 0.3s ease;
+}
+
+.activeSidebarButton .sidebarIcon {
+  color: white;
+}
+
+.tabContent {
+  padding: 1.5rem 2.5rem;
+  animation: scaleUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.98) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+:global([data-theme="dark"]) .sidebarContainer {
+  background-color: var(--bg-container);
+}
+
+@media (max-width: 1024px) {
+  .contentWrapperLayout {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebarContainer {
+    position: static;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  
+  .mainContentWrapper {
+    border-left: none;
+    border-top: 1px solid var(--border-light);
+    padding-top: 2rem;
+  }
+}

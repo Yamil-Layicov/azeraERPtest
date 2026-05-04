@@ -1,0 +1,109 @@
+.container {
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bütün input labelləri: digər tablarla eyni – 14px, font-weight 400 */
+.container label {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: #344054;
+}
+
+/* Input / DatePicker – daxilə yazılan və placeholder incə */
+.container :global(input),
+.container :global(input::placeholder) {
+  font-weight: 400 !important;
+  font-size: 14px;
+}
+.container :global(input) {
+  color: #101828;
+}
+.container :global(input::placeholder) {
+  color: #667085;
+  opacity: 1;
+}
+
+/* Select – placeholder və seçilmiş dəyər incə */
+.container :global(span[data-placeholder="true"]) {
+  font-weight: 400 !important;
+  font-size: 14px;
+  color: #667085;
+  opacity: 1;
+}
+.container :global(button[aria-haspopup="listbox"] > span:first-of-type:not([data-placeholder="true"])) {
+  font-weight: 400 !important;
+  font-size: 14px;
+  color: #101828;
+}
+
+.topSection {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+}
+
+.avatarOverride {
+  margin-top: 5px !important;
+}
+
+.avatarSide {
+  flex-shrink: 0;
+}
+
+.bottomSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.contactAndSocialRow {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+}
+
+.halfColumn {
+  flex: 1;
+  min-width: 0;
+}
+
+.documentInfoWrapper {
+  margin-top: 2rem;
+}
+
+/* Eyni en: contactAndSocialRow-da gap: 1rem olduğu üçün hər sütun (100% - 1rem) / 2-dir */
+.programUserInfoWrapper {
+  margin-top: 2rem;
+  width: calc((100% - 1rem) / 2);
+  min-width: 0;
+}
+
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+  .topSection {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .avatarSide {
+    margin-bottom: 20px;
+  }
+
+  .contactAndSocialRow {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .programUserInfoWrapper {
+    width: 100%;
+  }
+}

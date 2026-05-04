@@ -1,0 +1,284 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 0.5rem;
+  overflow: visible !important;
+  height: 100%;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: flex-start; /* Yuxarıdan başlasınlar */
+}
+
+/* Sol sütunu qruplaşdırmaq üçün */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputWithAction {
+  position: relative;
+  width: 100%;
+}
+
+.usernameFormGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.usernameInputWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.usernameInput {
+  flex: 1;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px 0px 0px 8px;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  height: 40px;
+}
+
+.usernameInput:focus {
+  outline: none;
+  border-color: #5B9BD1;
+  box-shadow: none;
+  transition: border-color 0.2s;
+}
+
+.usernameInput:hover:not(:disabled) {
+  border-color: var(--border-muted);
+  transition: border-color 0.2s;
+}
+
+.usernameInput:disabled {
+  background-color: var(--bg-container);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.clearUsernameButton {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-light);
+  background-color: var(--bg-white);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.clearUsernameButton:hover {
+  background-color: #fef2f2;
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.clearUsernameIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.available :global(input) {
+  border: 2px solid #10b981 !important;
+  transition: border-color 0.3s ease;
+}
+
+.taken :global(input) {
+  border: 2px solid #ef4444 !important;
+  transition: border-color 0.3s ease;
+}
+
+.actionsWrapper {
+  position: absolute;
+  right: 0;
+  top: 33px; 
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 5;
+}
+
+.checkButton {
+  height: 40px;
+  background: var(--primary-color);
+  border: none;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  padding: 0 1.5rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  flex-shrink: 0;
+}
+
+.checkButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.checkButton:hover {
+  opacity: 0.9;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px; 
+  height: 35px;
+  position: absolute;
+  right: -45px;
+  top: 33px;
+}
+
+.statusSuccess {
+  color: #10b981;
+  width: 35px;
+  height: 35px;
+  filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.2));
+}
+
+.statusError {
+  color: #ef4444;
+  width: 35px;
+  height: 35px;
+  filter: drop-shadow(0 2px 4px rgba(239, 68, 68, 0.2));
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  width: 18px;
+  height: 18px;
+  color: white;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* --- YENİ DÜYMƏ QRUPU --- */
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;  
+  margin-top: 3em
+}
+
+/* Axtar düyməsi */
+.ldapBtn {
+  padding: 0.4rem 1.5rem !important;
+  font-size: 0.9rem !important;
+  height: 38px !important; /* Standart hündürlük */
+  white-space: nowrap;
+  background-color: #f0f9ff !important;
+  color: #0284c7 !important;
+  border: 1px solid #bae6fd !important;
+  box-shadow: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.ldapBtn:hover {
+  background-color: #e0f2fe !important;
+  border-color: #7dd3fc !important;
+  color: #0369a1 !important;
+}
+
+/* Təmizlə düyməsi */
+.clearBtn {
+  padding: 0.4rem 1.5rem !important;
+  font-size: 0.9rem !important;
+  height: 38px !important;
+  white-space: nowrap;
+}
+
+/* --- Footer --- */
+.divider {
+  height: 1px;
+  background-color: var(--border-light);
+  margin: auto 0 0.5rem 0;
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.footerBtn {
+  min-width: 120px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+    gap: 1.25rem;
+    height: auto;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .iconContainer {
+      right: -35px;
+      width: 28px;
+      height: 28px;
+  }
+  .statusSuccess, .statusError {
+      width: 28px;
+      height: 28px;
+  }
+
+  .footer {
+    flex-direction: column-reverse;
+    width: 100%;
+    gap: 0.75rem;
+    margin-top: auto;
+  }
+
+  .footerBtn {
+    width: 100%;
+  }
+
+  .buttonGroup {
+    width: 100%;
+  }
+
+  .ldapBtn, .clearBtn {
+    flex: 1; /* Mobile-da bərabər bölünsünlər */
+  }
+}

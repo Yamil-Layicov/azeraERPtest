@@ -1,0 +1,2 @@
+export { StaffInfoTab } from "./StaffInfoTab";
+

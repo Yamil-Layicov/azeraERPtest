@@ -1,0 +1,177 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100%;
+}
+
+.content {
+  background-color: var(--bg-white);
+  border-radius: 12px;
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media (max-width: 768px) {
+  .content {
+    padding: 0px;
+  }
+}
+
+:global(.dark) .content {
+  background-color: #1e1e1e !important;
+}
+
+.tabContent {
+  flex: 1;
+}
+
+.stepperSection {
+  width: 100%;
+}
+
+.pendingWarning {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid #fecdca;
+  background-color: #fff4ed;
+  color: #b42318;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.pendingWarningIcon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.modalBtn {
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+  height: 50px !important;
+  min-height: 0 !important;
+  min-width: 180px;
+}
+
+.finalConfirmModal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.finalConfirmActions {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.finalConfirmTitle {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.finalConfirmModalContainer :global([class*="header"]) {
+  justify-content: center;
+  position: relative;
+  border-bottom: none;
+}
+
+.finalConfirmModalContainer
+  :global([class*="header"])
+  > :global([class*="closeButton"]) {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.6rem;
+  margin: 0;
+  z-index: 2;
+}
+
+.finalConfirmModalContainer
+  :global([class*="header"])
+  > :global([class*="closeButton"])
+  :global(button) {
+  margin: 0;
+}
+
+.finalConfirmCheckbox {
+  justify-content: center;
+}
+
+.finalConfirmCheckbox :global(label) {
+  text-align: center;
+}
+
+.successModalTitle {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.successModalContainer :global([class*="header"]) {
+  border-bottom: none;
+}
+
+.successModalBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.9rem;
+  justify-content: center;
+  padding-top: 0.25rem;
+}
+
+.successIconWrap {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(16, 185, 129, 0.14);
+  animation: successPulse 1.8s ease-out infinite;
+}
+
+.successCheckIcon {
+  width: 52px;
+  height: 52px;
+  color: #10b981;
+  animation: successPop 0.45s ease-out;
+}
+
+@keyframes successPop {
+  0% {
+    transform: scale(0.45);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes successPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.35);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}

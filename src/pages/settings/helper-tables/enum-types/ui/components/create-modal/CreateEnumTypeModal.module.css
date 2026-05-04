@@ -1,0 +1,26 @@
+.modal {
+  max-width: 380px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footerButton {
+  padding: 0.2rem 0.8rem !important;
+  font-size: 0.8rem !important;
+  height: 34px !important;
+  min-height: unset !important;
+  min-width: 80px !important;
+  white-space: nowrap;
+  margin-top: 0.5rem;
+}

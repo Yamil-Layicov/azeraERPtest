@@ -1,0 +1,48 @@
+.kontragents {
+  padding: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.createButton {
+  padding: 8px 24px;
+}
+
+.tableContent {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  margin: 16px 0;
+}
+
+.pagination {
+  margin-top: 16px;
+  padding: 16px;
+  background: transparent;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.statusBadge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.activeStatus {
+  background-color: #e6f7ef;
+  color: #00b050;
+}
+
+.passiveStatus {
+  background-color: #fff1f0;
+  color: #ff4d4f;
+}

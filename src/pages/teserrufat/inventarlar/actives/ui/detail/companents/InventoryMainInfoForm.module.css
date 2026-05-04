@@ -1,0 +1,54 @@
+.section {
+  background-color: var(--bg-white);
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sectionTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+.sectionSubtitle {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+.row1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.row2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.row2Gap8 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.fieldLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+.hint {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  line-height: 1.2;
+}
+.required {
+  color: var(--primary-color);
+  margin-left: 2px;
+}

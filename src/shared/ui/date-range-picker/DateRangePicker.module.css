@@ -1,0 +1,303 @@
+/* 1. Əsas Konteynerlər və Trigger Düyməsi */
+.datePickerWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.triggerButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  height: 40px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: left;
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.triggerButton:hover {
+  border-color: var(--border-muted);
+}
+
+.errorBorder {
+  border-color: #ef4444 !important;
+}
+
+.triggerButton:focus {
+  outline: none;
+  border-color: #5b9bd1;
+  box-shadow: 0 0 0 3px rgba(91, 155, 209, 0.2);
+}
+
+.triggerButton svg,
+.triggerButton .chevron {
+  color: var(--text-secondary);
+}
+
+.triggerButton .chevron {
+  margin-left: auto;
+}
+
+/* Dark Mode: Trigger Button */
+:global([data-theme="dark"]) .triggerButton {
+  border-color: var(--border-muted);
+}
+
+:global([data-theme="dark"]) .triggerButton:focus {
+  border-color: var(--primary-color);
+}
+
+/* 2. Dropdown Menyu (1 gün, 1 ay...) */
+.dropdownContainer {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 200px;
+  z-index: 100;
+  background: var(--bg-white);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-light);
+  padding: 8px;
+}
+
+.dropdownContainer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdownItem {
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--text-primary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.dropdownItem:hover {
+  background: var(--background-hover, #f3f4f6);
+  color: var(--brand-primary);
+}
+
+.separator {
+  height: 1px;
+  background: var(--border-color);
+  margin: 8px 0;
+}
+
+/* Dark Mode: Dropdown */
+:global([data-theme="dark"]) .dropdownContainer {
+  background: var(--bg-container, #1f2937);
+  border-color: var(--border-muted);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+:global([data-theme="dark"]) .dropdownItem {
+  color: var(--text-primary);
+}
+
+:global([data-theme="dark"]) .dropdownItem:hover,
+:global([data-theme="dark"]) .dropdownItem:last-child:hover {
+  background: var(--bg-hover, #374151) !important;
+  color: #ffffff !important; /* Task 16: Hover-də ağ rəng */
+}
+
+:global([data-theme="dark"]) .separator {
+  background: var(--border-muted, #4b5563);
+}
+
+/* 3. Calendar Popup Konteyneri */
+.calendarContainer {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 100;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-white);
+}
+
+.calendarActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg-white);
+  border-top: 1px solid var(--border-light);
+}
+
+/* Task 2: Yeni Button komponenti üçün xüsusi sinif */
+.pickerButton {
+  padding: 6px 12px !important;
+  font-size: 13px !important;
+  height: auto !important;
+  min-height: 32px !important;
+}
+
+/* 4. React-Date-Range Kitabxanası Overrides (Light Mode) */
+.calendarContainer :global(.rdrCalendarWrapper) {
+  background: var(--bg-white);
+  color: var(--text-primary);
+  min-width: 540px;
+}
+
+.calendarContainer :global(.rdrMonthName),
+.calendarContainer :global(.rdrDay),
+.calendarContainer :global(.rdrDay:not(.rdrDayPassive)) {
+  color: var(--text-primary);
+}
+
+.calendarContainer :global(.rdrDayPassive) {
+  color: var(--text-disabled);
+}
+
+/* Seçim Aralığı (Range) Rəngləri */
+.calendarContainer :global(.rdrInRange) {
+  background: rgba(40, 69, 92, 0.3) !important;
+}
+
+.calendarContainer :global(.rdrInRange:hover) {
+  background: rgba(40, 69, 92, 0.4) !important;
+}
+
+.calendarContainer :global(.rdrStartEdge),
+.calendarContainer :global(.rdrEndEdge),
+.calendarContainer :global(.rdrSelected) {
+  background: #28455e !important;
+}
+
+.calendarContainer :global(.rdrStartEdge:hover),
+.calendarContainer :global(.rdrEndEdge:hover),
+.calendarContainer :global(.rdrSelected:hover) {
+  background: #4a8bc0 !important;
+}
+
+.calendarContainer :global(.rdrDayToday .rdrDayNumber span:after) {
+  background: var(--brand-primary);
+}
+
+/* Seçim daxilindəki mətn rəngləri */
+.calendarContainer :global(.rdrInRange .rdrDayNumber span) {
+  color: var(--text-primary) !important;
+  font-weight: 500;
+}
+
+.calendarContainer :global(.rdrStartEdge .rdrDayNumber span),
+.calendarContainer :global(.rdrEndEdge .rdrDayNumber span),
+.calendarContainer :global(.rdrSelected .rdrDayNumber span) {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* 5. React-Date-Range Overrides (Dark Mode) */
+:global([data-theme="dark"]) .calendarContainer :global(.rdrDayNumber span),
+:global([data-theme="dark"]) .calendarContainer :global(.rdrMonthName) {
+  color: var(--text-primary) !important; /* Task 3: Rəqəmlər və Ay adı */
+}
+
+:global([data-theme="dark"])
+  .calendarContainer
+  :global(.rdrDayPassive .rdrDayNumber span),
+:global([data-theme="dark"]) .calendarContainer :global(.rdrWeekDay) {
+  color: var(--text-muted) !important;
+}
+
+/* Task 22: Date Display (Başlanğıc/Son tarix inputları) */
+:global([data-theme="dark"])
+  .calendarContainer
+  :global(.rdrDateDisplayWrapper) {
+  background-color: transparent !important;
+}
+
+:global([data-theme="dark"]) .calendarContainer :global(.rdrDateDisplayItem) {
+  background-color: var(--bg-container) !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: none !important;
+  border-radius: 6px !important;
+}
+
+:global([data-theme="dark"])
+  .calendarContainer
+  :global(.rdrDateDisplayItemActive) {
+  border-color: var(--primary-color) !important;
+  background-color: var(--bg-light) !important;
+}
+
+:global([data-theme="dark"])
+  .calendarContainer
+  :global(.rdrDateDisplayItem input) {
+  color: var(--text-primary) !important;
+  background-color: transparent !important;
+}
+
+:global([data-theme="dark"])
+  .calendarContainer
+  :global(.rdrDateDisplayItem input::placeholder) {
+  color: var(--text-muted) !important;
+}
+
+@media (max-width: 768px) {
+  .calendarContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 340px;
+    max-width: 95vw;
+    right: auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    background-color: var(--bg-white);
+    border-radius: 12px;
+  }
+
+  .calendarContainer :global(.rdrCalendarWrapper) {
+    width: 100% !important;
+    min-width: unset !important;
+    font-size: 12px !important;
+    border-radius: 12px;
+  }
+
+  .calendarContainer :global(.rdrMonth) {
+    width: 100% !important;
+    padding: 0 12px 12px 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  .calendarContainer :global(.rdrWeekDays) {
+    padding: 0 12px !important;
+  }
+
+  .calendarContainer :global(.rdrDateDisplayWrapper) {
+    background-color: transparent !important;
+    margin-bottom: 8px;
+  }
+
+  .calendarActions {
+    padding: 12px !important;
+    justify-content: space-between !important;
+  }
+
+  .calendarActions button {
+    flex: 1;
+  }
+}

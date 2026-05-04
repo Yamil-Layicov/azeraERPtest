@@ -1,0 +1,37 @@
+.container {
+     display: flex;
+     flex-direction: column;
+     gap: 16px;
+     padding: 8px 0;
+   }
+   
+   .inputWrapper {
+     display: flex;
+     flex-direction: column;
+     gap: 6px;
+     position: relative;
+   }
+   
+   .label {
+     font-size: 14px;
+     font-weight: 500;
+     color: #344054;
+   }
+   
+   .footer {
+     display: flex;
+     justify-content: flex-end; /* Düymələr sağda */
+     gap: 12px;
+     margin-top: 24px;
+     padding-top: 20px;
+     border-top: 1px solid #eaecf0;
+   }
+   
+   .modalBtn {
+     padding: 0px 10px !important;
+     font-size: 0.8rem !important;
+     height: 34px !important;
+     display: flex !important;
+     align-items: center;
+     justify-content: center;
+   }

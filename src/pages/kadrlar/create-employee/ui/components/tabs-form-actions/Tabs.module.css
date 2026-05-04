@@ -1,0 +1,87 @@
+.tabsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 1.5rem;
+}
+
+.tabButton {
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tabButton:hover {
+  color: var(--text-primary);
+}
+
+.tabButton.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  font-weight: 600;
+}
+
+:global([data-theme="dark"]) .tabButton {
+  color: var(--text-white);
+  opacity: 0.7;
+}
+
+:global([data-theme="dark"]) .tabButton:hover {
+  color: var(--text-white);
+  opacity: 1;
+}
+
+:global([data-theme="dark"]) .tabButton.active {
+  color: var(--text-white);
+  border-bottom-color: #dc2626; 
+  opacity: 1;
+}
+
+.tabButton.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.tabButton.disabled:hover {
+  color: var(--text-muted);
+}
+
+:global([data-theme="dark"]) .tabButton.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+:global([data-theme="dark"]) .tabButton.disabled:hover {
+  color: var(--text-white);
+  opacity: 0.4;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .tabsHeader {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .tabsHeader::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tabButton {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+

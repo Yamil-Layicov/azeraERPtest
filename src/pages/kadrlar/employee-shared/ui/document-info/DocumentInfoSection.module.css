@@ -1,0 +1,144 @@
+.contactsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: visible !important;
+  position: relative;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0;
+}
+
+.titleDivider {
+  height: 1px;
+  background-color: var(--border-light);
+  width: 100%;
+  margin: 0;
+}
+
+.contactRow {
+  display: flex;
+  align-items: flex-start; /* Sənəd inputları üçün vacibdir. flex-start istifadə edirik ki, xəta mesajları hizalanmanı pozmasın */
+  gap: 1rem;
+  flex-wrap: wrap; /* Document üçün vacibdir */
+}
+
+.contactRow:focus-within {
+  z-index: 1000 !important;
+}
+
+/* Document Specific Styles - Desktop */
+.docTypeWrapper {
+  flex: 1;
+  min-width: 200px;
+}
+
+.docSeriesWrapper {
+  flex: 0.6;
+  min-width: 80px;
+}
+
+.docNumberWrapper {
+  flex: 1.4;
+  min-width: 160px;
+}
+
+.docDateWrapper {
+  flex: 1;
+  min-width: 120px;
+}
+
+.contactActions {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  gap: 0.5rem;
+  margin-left: auto; /* Desktopda sağa sıxmaq üçün */
+}
+
+.removeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  background-color: #fff;
+  color: #ef4444;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.removeBtn:hover {
+  background-color: #fef2f2;
+  border-color: #ef4444;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+::global([data-theme="dark"]) .sectionTitle {
+  color: var(--text-primary);
+}
+
+::global([data-theme="dark"]) .removeBtn {
+  background-color: var(--bg-container);
+  border-color: var(--border-muted);
+}
+
+::global([data-theme="dark"]) .removeBtn:hover {
+  background-color: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  /* Contact Row - Card Style */
+  .contactRow {
+    flex-direction: column;
+    align-items: stretch !important; /* Document inputs stretch */
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: var(--bg-container);
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+  }
+
+  /* Document Fields - Full Width on Mobile */
+  .docTypeWrapper,
+  .docSeriesWrapper,
+  .docNumberWrapper,
+  .docDateWrapper {
+    width: 100%;
+    flex: none;
+    min-width: 0;
+  }
+
+  .contactActions {
+    width: 100%;
+    justify-content: flex-end;
+    border-top: 1px solid var(--border-light);
+    padding-top: 0.75rem;
+    margin-top: 0.25rem;
+    height: auto;
+    margin-left: 0;
+  }
+}
+

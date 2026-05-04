@@ -1,0 +1,41 @@
+.rightGrid {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  row-gap: 24px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.fieldLabel {
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+  font-weight: 400;
+  color: #344054;
+}
+
+.emptyCell {
+  visibility: hidden;
+}
+
+@media (max-width: 1024px) {
+  .rightGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .rightGrid {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .emptyCell {
+    display: none;
+  }
+}
+

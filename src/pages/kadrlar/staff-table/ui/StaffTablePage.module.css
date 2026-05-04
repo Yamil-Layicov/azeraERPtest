@@ -1,0 +1,248 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+}
+
+.contentArea {
+  display: flex;
+  margin-top: 1rem;
+  flex: 1;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.leftColumn {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* --- DIVIDER (Ayırıcı Xətt) --- */
+.divider {
+  position: relative;
+  width: 1px;
+  margin: 0 1.5rem; 
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+/* Əsas Xətt */
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--border-light) 15%,
+    var(--border-light) 85%,
+    transparent 100%
+  );
+  opacity: 0.8;
+}
+
+/* İşıq Effekti */
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(229, 231, 235, 0.3) 20%,
+    rgba(229, 231, 235, 0.3) 80%,
+    transparent 100%
+  );
+  filter: blur(1px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+:global([data-theme="dark"]) .divider::before {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(148, 163, 184, 0.2) 10%,
+    rgba(148, 163, 184, 0.4) 50%,
+    rgba(148, 163, 184, 0.2) 90%,
+    transparent 100%
+  );
+  opacity: 1;
+}
+
+:global([data-theme="dark"]) .divider::after {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(148, 163, 184, 0.1) 20%,
+    rgba(148, 163, 184, 0.15) 80%,
+    transparent 100%
+  );
+  filter: blur(2px);
+  opacity: 0.5;
+}
+
+@media (max-width: 1024px) {
+  .divider {
+    display: none;
+  }
+}
+
+.rightColumn {
+  flex: 0 0 30%;
+  max-width: 30%;
+  min-width: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (max-width: 1024px) {
+  .header {
+ display: flex;
+ flex-direction: column;
+ align-items: start;
+  }
+}
+
+.tableWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 5px;
+  min-width: 0;
+}
+
+.tableWrapper > div:nth-child(2) {
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  min-width: 0;
+}
+
+.tableWrapper table {
+  table-layout: fixed;
+  width: max-content !important;
+  min-width: 100% !important;
+}
+
+/* Rəhbər, Əsas, Aktiv – yalnız ikon, dar sütun */
+.tableWrapper :global(th):nth-child(5),
+.tableWrapper :global(th):nth-child(6),
+.tableWrapper :global(th):nth-child(7),
+.tableWrapper :global(.tableRow) > :global(.tableCell):nth-child(5),
+.tableWrapper :global(.tableRow) > :global(.tableCell):nth-child(6),
+.tableWrapper :global(.tableRow) > :global(.tableCell):nth-child(7) {
+  width: 50px !important;
+  min-width: 50px !important;
+  max-width: 50px !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.tableWrapper :global(.tableRow) > :global(.tableCell):nth-child(1),
+.tableWrapper :global(.tableRow) > :global(.tableCell):nth-child(3),
+.tableWrapper :global(.tableRow) > :global(.tableCell):nth-child(4) {
+  padding: 8px 10px;
+  white-space: normal !important;
+  overflow: visible;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.tableWrapper :global(.tableRow) > :global(.tableCell) {
+  vertical-align: top;
+}
+
+.companyWrapper { 
+  width: 170px;
+}
+
+.companySelect {
+  min-width: 160px;
+}
+
+.paginationSelectWrapper {
+  flex-shrink: 0;
+}
+
+.paginationSelect {
+  min-width: 80px;
+}
+
+.addButton {
+  padding: 0.3rem 1rem !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  border-radius: 3px !important;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footerRowCount {
+  display: flex;
+  align-items: center;
+}
+
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+:global([data-theme="dark"]) .rightColumn {
+  border-color: var(--border-muted);
+}
+
+:global([data-theme="dark"]) .topToolbar{
+  background-color: var(--bg-container);
+  border-color: var(--border-muted);
+}
+
+.emptyState {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 320px;
+  color: #9ca3af;
+  font-weight: 600;
+  text-align: center;
+  min-height: 300px;
+}
+
+.emptyState p {
+  line-height: 1.6;
+  margin-top: 3rem;
+}
+
+@media (max-width: 1024px) {
+  .contentArea {
+    flex-direction: column;
+    overflow: visible;
+  }
+
+  .leftColumn,
+  .rightColumn {
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}

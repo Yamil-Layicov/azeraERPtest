@@ -1,0 +1,103 @@
+.container {
+     display: flex;
+     flex-direction: column;
+     gap: 16px;
+   }
+
+   /* Sahə: label + control, eyni məsafə (inputun azca üstündə) */
+   .field {
+     display: flex;
+     flex-direction: column;
+     gap: 6px;
+     align-items: stretch;
+     min-width: 0;
+   }
+
+   /* FormInput daxilindəki boş label gizlət, əlavə boşluq olmasın */
+   .field :global(label) {
+     display: none;
+   }
+   .field > div {
+     margin-top: 0;
+     gap: 0;
+   }
+
+   .container :global(label),
+   .label {
+     font-size: 14px !important;
+     font-weight: 400 !important;
+     color: #344054;
+     display: block;
+     min-height: 1.25rem;
+     line-height: 1.25rem;
+   }
+
+   /* Doğum tarixi – input içindəki mətn incə */
+   .container :global(input) {
+     font-weight: 400 !important;
+     font-size: 14px;
+     color: #101828;
+   }
+   .container :global(input::placeholder) {
+     font-weight: 400 !important;
+     font-size: 14px;
+     color: #667085;
+     opacity: 1;
+   }
+
+   /* Doğulduğu şəhər/rayon (Select) – placeholder və seçilmiş dəyər incə */
+   .container :global(span[data-placeholder="true"]) {
+     font-weight: 400 !important;
+     font-size: 14px;
+     color: #667085;
+     opacity: 1;
+   }
+   .container :global(button[aria-haspopup="listbox"] > span:first-of-type:not([data-placeholder="true"])) {
+     font-weight: 400 !important;
+     font-size: 14px;
+     color: #101828;
+   }
+
+   .rowOne {
+     display: flex;
+     align-items: flex-end;
+     gap: 24px;
+   }
+
+   .selectWrapper {
+     width: 300px;
+   }
+
+   .checkboxGroup {
+     display: flex;
+     align-items: center;
+     gap: 20px;
+     padding-bottom: 12px;
+   }
+
+   .gridThree,
+   .gridTwo {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     gap: 16px;
+     align-items: end;
+   }
+
+   .actions {
+     display: flex;
+     justify-content: flex-end;
+     align-items: center;
+     gap: 0.75rem;
+     margin-top: 1rem;
+   }
+
+   .addButton,
+   .clearButton {
+     height: 40px;
+     min-height: 40px;
+     padding: 0 1rem;
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 14px;
+   }

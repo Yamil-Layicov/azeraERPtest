@@ -1,0 +1,10 @@
+.totalCount {
+    font-size: 14px;
+    color: var(--text-primary);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  
+  :global([data-theme="dark"]) .totalCount {
+    color: var(--text-primary);
+  }

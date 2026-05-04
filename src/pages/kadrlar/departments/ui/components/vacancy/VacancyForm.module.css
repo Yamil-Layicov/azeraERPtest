@@ -1,0 +1,62 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0 20px 20px;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 20px; 
+}
+
+.required {
+  color: #e74c3c;
+  font-size: 16px;
+}
+
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.saveBtnWrapper {
+  display: flex;
+  gap: 0.8rem;
+  margin-left: auto; /* Sağ tərəfə sıxmaq üçün */
+}
+
+.formBtn {
+  padding: 0.4rem 1.2rem !important;
+  font-size: 0.85rem !important;
+  height: 36px !important;
+  min-height: 0 !important;
+  white-space: nowrap;
+  min-width: 100px;
+}
+
+.deleteBtnWrapper {
+  min-width: 10px;
+}

@@ -1,0 +1,170 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+.errorAlert {
+  padding: 0.75rem 1rem;
+  background-color: #fef2f2;
+  border: 1px solid #f87171;
+  color: #b91c1c;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+:global([data-theme="dark"]) .errorAlert {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.readOnlyInfo {
+  padding: 0.85rem 1rem;
+  background: var(--bg-hover);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.readOnlyInfo strong {
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+.label{
+  margin-bottom: rem;
+  font-weight: 600;
+}
+.labelClass{
+  font-weight: 500 !important;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* Radio Group */
+.radioGroup {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.5rem 0;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.radioLabel input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* Vendors List (Multi-Select alternative in Modal) */
+.vendorsList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  padding: 1rem;
+  border-radius: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.vendorsError {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 1px #ef4444;
+}
+
+.vendorCheckbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--bg-hover);
+  transition: background 0.2s;
+}
+
+.vendorCheckbox:hover {
+  background: var(--bg-active);
+}
+
+:global([data-theme="dark"]) .vendorCheckbox {
+  background: var(--bg-white);
+}
+
+:global([data-theme="dark"]) .vendorCheckbox:hover {
+  background: var(--bg-hover);
+}
+
+.vendorCheckbox input[type="checkbox"] {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+
+.vendorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vendorName {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.vendorContact {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .vendorsList {
+    grid-template-columns: 1fr;
+  }
+}

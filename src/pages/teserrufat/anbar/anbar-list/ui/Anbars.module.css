@@ -1,0 +1,54 @@
+.container {
+  padding: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.createButton {
+  padding: 8px 24px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.tableCard {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.pagination {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+.iconButton1 {
+  padding: 4px 4px;
+  background: rgba(190, 240, 190, 0.263);
+  color: rgb(108, 223, 108);
+  border: 1px solid rgba(103, 211, 103, 0.519);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);  
+}
+.iconButton2 {
+  padding: 4px 4px;
+  color: rgba(77, 77, 230, 0.796);
+  border: 1px solid rgba(246, 165, 165, 0.502);
+  background: rgba(128, 128, 240, 0.112);
+  border: 1px solid rgba(74, 74, 241, 0.73);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);  
+  font-size: 12px;
+}
+.iconButton3 {
+  padding: 4px 4px;
+  color: rgb(227, 111, 111) !important;
+  border: 1px solid rgb(252, 165, 165);
+  background: rgba(243, 123, 107, 0.107);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);  
+}

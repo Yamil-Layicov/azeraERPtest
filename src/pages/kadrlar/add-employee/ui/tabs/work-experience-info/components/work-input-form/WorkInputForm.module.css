@@ -1,0 +1,248 @@
+.container {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  row-gap: 8px;
+  /* Keep controls pinned to top so validation text doesn't shift siblings */
+  align-items: flex-start;
+}
+
+.row:not(:first-child) {
+  margin-top: 1px;
+}
+
+.rowAppointmentCheck {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: flex-start; 
+  margin-top: 12px;
+}
+
+.checkboxWrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 40px;
+  margin-top: 26px; 
+}
+
+.checkboxWrapTop {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 40px;
+}
+
+.azadOlSection {
+  margin-top: 12px;
+  padding: 3rem 20px;
+  background: var(--bg-muted);
+  border-radius: 8px;
+  border: 1px solid var(--border-light, #e5e7eb);
+  overflow: visible; 
+  max-height: 800px;
+  opacity: 1;
+  transition: max-height 0.35s ease-out, opacity 0.3s ease-out, margin 0.35s ease-out;
+}
+
+.azadOlSectionClosed {
+  margin-top: 0;
+  padding: 0 20px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: max-height 0.35s ease-out, opacity 0.25s ease-out, margin 0.35s ease-out;
+}
+
+.rowAzadFull {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.rowAzadFull .field.fieldLongLabel .label {
+  line-height: 1.3;
+  margin-top: -1.1em;
+}
+
+.rowAzadFull .field .controlWrap {
+  align-items: flex-start;
+  height: auto;
+}
+
+.rowAzadFull .field .controlWrap textarea,
+.rowAzadFull .field textarea {
+  min-height: 80px;
+  resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.textareaRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+  align-items: end;
+}
+
+.fieldFull {
+  grid-column: span 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.fieldFull :global(label) {
+  display: none;
+}
+
+.fieldFull :global(textarea) {
+  min-height: 120px;
+  resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.label,
+.container :global(label) {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #344054;
+  margin-bottom: 6px;
+}
+
+.required {
+  color: var(--error, #d92d20);
+  margin-left: 2px;
+}
+
+.container :global(input::placeholder),
+.container :global(textarea::placeholder) {
+  color: #667085 !important;
+  font-weight: 400;
+  font-size: 14px;
+  opacity: 1;
+}
+
+.container :global(span[data-placeholder="true"]) {
+  color: #667085 !important;
+  font-weight: 400;
+  font-size: 14px;
+  opacity: 1;
+}
+
+.container :global(.react-datepicker__input-container input::placeholder),
+.container .datePicker :global(input::placeholder) {
+  color: #667085 !important;
+  font-weight: 400;
+  font-size: 14px;
+  opacity: 1;
+}
+
+.container :global(input),
+.container :global(button[aria-haspopup="listbox"] > span:first-of-type:not([data-placeholder="true"])) {
+  color: #101828 !important;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* Dark mode: select-in seçilmiş dəyərinin rəngi ağ olsun */
+:global([data-theme="dark"]) .container
+  :global(button[aria-haspopup="listbox"] > span:first-of-type:not([data-placeholder="true"])) {
+  color: #ffffff !important;
+}
+
+.container :global(button[aria-haspopup="listbox"]),
+.container :global(input) {
+  height: auto !important;
+  min-height: 40px !important;
+  padding: 0.5rem 0.75rem !important;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 84px;
+}
+
+.field .controlWrap > div > label {
+  display: none;
+}
+
+.controlWrap {
+  min-height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.controlWrap > div {
+  width: 100%;
+}
+
+.datePicker {
+  width: 100%;
+  min-width: 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.addButton,
+.clearButton {
+  height: 40px;
+  min-height: 40px;
+  padding: 0 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+@media (max-width: 1200px) {
+  .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .rowAzadFull {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .textareaRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .rowAppointmentCheck {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+  .rowAzadFull {
+    grid-template-columns: 1fr;
+  }
+  .rowAppointmentCheck {
+    grid-template-columns: 1fr;
+  }
+  .textareaRow {
+    grid-template-columns: 1fr;
+  }
+}

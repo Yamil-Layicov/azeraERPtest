@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0; 
+  background-color: transparent;
+}
+
+.fullWidthRow {
+  width: 100%;
+}
+
+.sectionRow {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+.halfColumn {
+  flex: 1;
+  /* Senior UI Tip: 50% genişlik garantisi için flex-basis kullanıyoruz */
+  flex-basis: calc(50% - 12px); 
+  min-width: 0; /* Flex item'ların taşmasını engeller */
+}
+
+@media (max-width: 1024px) {
+  .sectionRow {
+    flex-direction: column;
+  }
+  .halfColumn {
+    flex-basis: 100%;
+  }
+}

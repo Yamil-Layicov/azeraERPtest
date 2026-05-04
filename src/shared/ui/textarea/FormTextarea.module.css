@@ -1,0 +1,79 @@
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.textarea {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #5B9BD1;
+  box-shadow: 0 0 0 3px rgba(91, 155, 209, 0.2);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.textarea:hover {
+  border-color: var(--border-muted);
+  transition: border-color 0.2s;
+}
+
+/* Dark mode base border */
+:global([data-theme="dark"]) .textarea {
+  border-color: var(--border-muted);
+}
+
+.textarea:disabled {
+  background-color: var(--bg-container);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  opacity: 0.8;
+  box-shadow: none;
+}
+
+/* Disabled olanda hover və focus effektlərini ləğv edirik */
+.textarea:disabled:hover,
+.textarea:disabled:focus {
+  border-color: var(--border-light);
+  box-shadow: none;
+  outline: none;
+}
+
+.errorMessage {
+  margin-top: 0.25rem;
+  font-size: 0.8125rem;
+  color: #d20606;
+}
+
+:global([data-theme="dark"]) .errorMessage {
+  color: #f87171;
+}
+
+/* Error state */
+:global(.error) {
+  border-radius: 8px;
+  border-color: #d20606 !important;
+  box-shadow: none !important;
+}
+
+/* Dark mode error state */
+:global([data-theme="dark"]) :global(.error) {
+  border-color: #dc2626 !important;
+  box-shadow: none !important;
+}
+

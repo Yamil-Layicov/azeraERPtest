@@ -1,0 +1,98 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.container label {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: #344054;
+}
+
+.container :global(input),
+.container :global(input::placeholder) {
+  font-weight: 400 !important;
+  font-size: 14px;
+}
+.container :global(input) {
+  color: #101828;
+}
+.container :global(input::placeholder) {
+  color: #667085;
+  opacity: 1;
+}
+
+.container :global(span[data-placeholder="true"]) {
+  font-weight: 400 !important;
+  font-size: 14px;
+  color: #667085;
+  opacity: 1;
+}
+.container :global(button[aria-haspopup="listbox"] > span:first-of-type:not([data-placeholder="true"])) {
+  font-weight: 400 !important;
+  font-size: 14px;
+  color: #101828;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  column-gap: 1.25rem;
+  row-gap: 1rem;
+  align-items: flex-start;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* Validation error çıktığında layout'un yer değiştirmemesi üçün boşta da
+     sabit yer rezerv edirik. (input + label + pot. error mesaji) */
+  min-height: 110px;
+}
+@media (max-width: 768px) {
+  .fieldGroup {
+    min-height: 50px;
+  }
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #344054;
+}
+
+.buttonCell {
+  display: flex;
+  align-items: flex-start;
+  /* Label + fieldGroup gap dəyərinə uyğun sabit ofset:
+     label (təxmini 18px) + gap (0.5rem ~ 8px) => ~26px */
+  padding-top: 26px;
+}
+
+.addButton {
+  height: 40px;
+  min-height: 40px;
+  padding: 0.60rem 1rem !important;
+}
+
+@media (max-width: 1024px) {
+  .formRow {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .buttonCell {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .buttonCell {
+    grid-column: span 1;
+  }
+}

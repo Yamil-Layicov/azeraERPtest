@@ -1,0 +1,173 @@
+.container {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fetchingText {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-muted, #6b7280);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    
+}
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.label,
+.container :global(label) {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #344054;
+  margin-bottom: 6px;
+}
+
+.required {
+  color: #d92d20;
+  margin-left: 2px;
+}
+
+.container :global(button[aria-haspopup="listbox"]),
+.container :global(input) {
+  height: auto !important;
+  min-height: 40px !important;
+  padding: 0.5rem 0.75rem !important;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+.container :global(span[data-placeholder="true"]) {
+  color: #667085 !important;
+  font-weight: 400 !important;
+  font-size: 14px;
+  opacity: 1;
+}
+
+.container :global(.react-datepicker__input-container input::placeholder),
+.container :global(.react-datepicker__input-container input),
+.container :global(input::placeholder) {
+  color: #667085 !important;
+  font-weight: 400 !important;
+  font-size: 14px;
+  opacity: 1;
+}
+
+.twoColumnGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: start;
+}
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.subField {
+    width: 100%;
+}
+
+
+.annualRowLabel {
+    min-height: 1.4rem;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.3;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1560px) {
+  .annualRowLabel {
+    min-height: 2.3rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .annualRowLabel {
+    min-height: 3.1rem;
+  }
+}
+
+.inputWithButton {
+  position: relative;
+  width: 100%;
+}
+
+.inputWithButtonInput {
+  width: 100%;
+}
+
+.inputWithButtonInput :global(input) {
+  padding-right: 110px !important;
+}
+
+.inputWithButtonButton {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  /* FormInput .input ilə eyni hündürlük və sağ radius (8px) */
+  height: 40px;
+  min-height: 40px;
+  padding: 0 16px;
+  border: none !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.35) !important;
+  background: #0b9489 !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 0 8px 8px 0;
+  transform: none !important;
+}
+
+.inputWithButtonButton:hover,
+.inputWithButtonButton:focus,
+.inputWithButtonButton:active {
+  transform: none !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.35) !important;
+  background: #0b9489 !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+}
+
+.actions {
+    grid-column: 1 / -1; 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.addButton,
+.clearButton {
+    height: 40px;
+    min-height: 40px;
+    padding: 0 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+}

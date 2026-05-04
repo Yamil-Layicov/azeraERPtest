@@ -1,0 +1,47 @@
+.container {
+  padding: 20px 0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.label,
+.container :global(label) {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #344054;
+  margin-bottom: 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.addButton {
+  min-width: 120px;
+  height: 40px;
+  min-height: 40px;
+  padding: 0 1rem;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

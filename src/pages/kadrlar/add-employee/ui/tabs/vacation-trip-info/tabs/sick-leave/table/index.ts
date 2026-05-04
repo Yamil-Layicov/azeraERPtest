@@ -1,0 +1,1 @@
+export { SickLeaveTable } from "./SickLeaveTable";

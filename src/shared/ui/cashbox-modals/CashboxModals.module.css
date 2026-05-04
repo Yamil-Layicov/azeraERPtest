@@ -1,0 +1,196 @@
+/* .modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modalContent {
+  background-color: var(--bg-primary, #ffffff);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+}
+
+.modalHeader h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary, #6b7280);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.closeButton:hover {
+  background-color: var(--bg-hover, #f3f4f6);
+  color: var(--text-primary, #111827);
+}
+
+.closeIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.form {
+  padding: 1.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1.25rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary, #374151);
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: var(--text-primary, #111827);
+  background-color: var(--bg-primary, #ffffff);
+  transition: all 0.2s ease;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: #0B9489;
+  box-shadow: 0 0 0 3px rgba(11, 148, 137, 0.1);
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.submitButton,
+.cancelButton,
+.resetButton {
+  flex: 1;
+  padding: 0.625rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submitButton {
+  background-color: #0B9489;
+  color: white;
+}
+
+.submitButton:hover {
+  background-color: #0a8278;
+}
+
+.cancelButton,
+.resetButton {
+  background-color: var(--bg-secondary, #f3f4f6);
+  color: var(--text-primary, #374151);
+}
+
+.cancelButton:hover,
+.resetButton:hover {
+  background-color: var(--bg-hover, #e5e7eb);
+}
+
+:global([data-theme="dark"]) .modalContent {
+  background-color: var(--bg-secondary, #1f2937);
+}
+
+:global([data-theme="dark"]) .modalHeader {
+  border-bottom-color: var(--border-color, #374151);
+}
+
+:global([data-theme="dark"]) .modalHeader h2 {
+  color: var(--text-primary, #f9fafb);
+}
+
+:global([data-theme="dark"]) .closeButton {
+  color: var(--text-secondary, #9ca3af);
+}
+
+:global([data-theme="dark"]) .closeButton:hover {
+  background-color: var(--bg-hover, #374151);
+  color: var(--text-primary, #f9fafb);
+}
+
+:global([data-theme="dark"]) .formGroup label {
+  color: var(--text-primary, #f9fafb);
+}
+
+:global([data-theme="dark"]) .formGroup input,
+:global([data-theme="dark"]) .formGroup select {
+  background-color: var(--bg-primary, #111827);
+  border-color: var(--border-color, #374151);
+  color: var(--text-primary, #f9fafb);
+}
+
+:global([data-theme="dark"]) .formGroup input:focus,
+:global([data-theme="dark"]) .formGroup select:focus {
+  border-color: #14b8a6;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+}
+
+:global([data-theme="dark"]) .submitButton {
+  background-color: #14b8a6;
+}
+
+:global([data-theme="dark"]) .submitButton:hover {
+  background-color: #0d9488;
+}
+
+:global([data-theme="dark"]) .cancelButton,
+:global([data-theme="dark"]) .resetButton {
+  background-color: var(--bg-hover, #374151);
+  color: var(--text-primary, #f9fafb);
+}
+
+:global([data-theme="dark"]) .cancelButton:hover,
+:global([data-theme="dark"]) .resetButton:hover {
+  background-color: var(--border-color, #4b5563);
+}
+
+ */

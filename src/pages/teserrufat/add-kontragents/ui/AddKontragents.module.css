@@ -1,0 +1,25 @@
+.customHeader {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+  justify-content: start;
+}
+
+.radioSwitch {
+  display: flex;
+  align-items: end !important;
+  margin-top: 5px;
+  justify-content: end;
+  gap: 1rem;
+}
+.buttonGroup {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem;
+  flex-shrink: 0;
+  min-width: fit-content;
+  align-self: flex-end;
+}

@@ -1,0 +1,12 @@
+.container {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fetchingText {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text-muted, #667085);
+}

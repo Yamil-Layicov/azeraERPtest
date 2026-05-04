@@ -1,0 +1,2 @@
+export { EmployeeDetailsTabActions } from "./EmployeeDetailsTabActions";
+

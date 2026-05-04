@@ -1,0 +1,180 @@
+/* src/pages/kassa/cashbox/Cashbox.module.css */
+.listWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.listWrapper h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.addButton {
+  padding: 0.3rem 1rem !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  border-radius: 3px !important;
+}
+@media (max-width: 950px) {
+  .headerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+.headerCompanySelect > button {
+  height: 32px !important;
+  min-height: 32px !important;
+  padding: 0.3rem 0.75rem !important;
+  font-size: 0.85rem !important;
+  border-radius: 3px !important;
+  width: 170px !important;
+}
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.controlsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.rowCountSelect {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rowCountSelect > div:first-child {
+  width: 80px !important;
+  flex: 0 0 auto;
+}
+
+.totalCount {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.buttonsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.detailButton,
+.deleteButton {
+  padding: 4px 6px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: bold;
+}
+
+.detailButton {
+  background: white;
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.detailButton:hover {
+  background: #007bff;
+  color: white;
+}
+
+:global([data-theme="dark"]) .detailButton {
+  background-color: transparent;
+  color: #007bff;
+  border-color: #007bff;
+}
+
+:global([data-theme="dark"]) .detailButton:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+:global([data-theme="dark"]) .deleteButton {
+  background-color: transparent;
+  color: #fff;
+  border-color: #e71328;
+}
+
+:global([data-theme="dark"]) .deleteButton:hover {
+  background-color: #e71328;
+  color: white;
+}
+
+.deleteButton {
+  background: white;
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+.deleteButton:hover {
+  background: #dc3545;
+  color: white;
+}
+
+.rowNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--text-primary);
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0 auto;
+  font-weight: 700;
+}
+
+:global([data-theme="dark"]) .rowNumber {
+  color: var(--text-muted);
+}
+
+.pagination {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Status Styles - AllListPage ilə eyni */
+.status {
+  padding: 0px 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.statusApproved {
+  background: #d4edda;
+  color: #155724;
+}
+
+.statusRejected {
+  background: #f8d7da;
+  color: #721c24;
+}

@@ -1,0 +1,83 @@
+.expenseSection {
+  background: var(--bg-white);
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-xs);
+  margin-top: 18px;
+  padding: 18px 18px 10px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.expenseHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.expenseTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.addExpenseBtn {
+  border: none;
+  border-radius: 8px;
+  padding: 7px 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.expenseTableWrapper {
+  overflow-x: auto;
+}
+
+.expenseTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.97rem;
+  background: white;
+}
+.expenseTable th,
+.expenseTable td {
+  border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  text-align: left;
+}
+.expenseTable th {
+  background: #f1f5f9;
+  font-weight: 700;
+  color: #334155;
+}
+.expenseTable tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.viewBtn {
+  background: #f1f5f9;
+  color: #2563eb;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 4px !important;
+  font-size: 12px !important;
+  cursor: pointer;
+  width: 10px !important;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+    min-width: 24px !important;
+    min-height: 24px !important;
+}
+.viewBtn:hover {
+  background: #e0e7ef;
+  border-color: #2563eb;
+}

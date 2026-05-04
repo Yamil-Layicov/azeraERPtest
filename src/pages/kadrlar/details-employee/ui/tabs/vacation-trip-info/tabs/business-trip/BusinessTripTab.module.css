@@ -1,0 +1,87 @@
+.container {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.label,
+.container :global(label) {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #344054;
+  margin-bottom: 6px;
+}
+
+.required {
+  color: #d92d20;
+  margin-left: 2px;
+}
+
+.container :global(button[aria-haspopup="listbox"]),
+.container :global(input) {
+  height: auto !important;
+  min-height: 40px !important;
+  padding: 0.5rem 0.75rem !important;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+.container :global(span[data-placeholder="true"]) {
+  color: #667085 !important;
+  font-weight: 400 !important;
+  font-size: 14px;
+  opacity: 1;
+}
+
+.container :global(.react-datepicker__input-container input::placeholder),
+.container :global(.react-datepicker__input-container input),
+.container :global(input::placeholder) {
+  color: #667085 !important;
+  font-weight: 400 !important;
+  font-size: 14px;
+  opacity: 1;
+}
+
+.twoColumnGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px; 
+    align-items: end; 
+}
+
+.subField {
+    width: 100%;
+}
+
+.actions {
+    grid-column: 1 / -1; 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.addButton,
+.clearButton {
+    height: 40px;
+    min-height: 40px;
+    padding: 0 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    cursor: pointer;
+}

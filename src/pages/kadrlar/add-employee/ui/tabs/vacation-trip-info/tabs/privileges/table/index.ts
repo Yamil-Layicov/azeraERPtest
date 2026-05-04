@@ -1,0 +1,1 @@
+export { PrivilegesTable } from "./PrivilegesTable";

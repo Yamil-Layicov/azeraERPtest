@@ -1,0 +1,254 @@
+.headerActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 0 8px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.addBtnIcon {
+  margin-right: 8px;
+}
+
+.tableContainer {
+  border-radius: 16px !important;
+  border: 1px solid var(--border-light, #f0f0f0) !important;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
+}
+
+.tableFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+.editBtnIcon, .deleteBtnIcon {
+  font-size: 18px;
+}
+
+.domainLink {
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.unitName {
+  font-weight: 700;
+}
+
+.operationSelect {
+  display: flex;
+  gap: 8px;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.saveBtnContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.saveIcon {
+  font-size: 18px;
+}
+
+.activeLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.filterTitle {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: var(--text-primary, #1a1a1a);
+}
+
+.addNewButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 24px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border-light, #f0f0f0) !important;
+  background: transparent !important;
+  color: var(--text-secondary, #595959) !important;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: none !important;
+  height: 36px;
+}
+
+:global([data-theme="dark"]) .addNewButton {
+  border-color: var(--border-dark) !important;
+  color: var(--text-muted) !important;
+  background: transparent !important;
+}
+
+.addNewButton:hover {
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+  background: var(--bg-primary) !important;
+  transform: translateY(-2px);
+}
+
+:global([data-theme="dark"]) .addNewButton:hover {
+  background: rgba(184, 3, 12, 0.1) !important;
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+.tableCard {
+  background: var(--bg-card, white) !important;
+  border-radius: 16px !important;
+  border: 1px solid var(--border-light, #f0f0f0) !important;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
+}
+
+.tableActionBtn {
+  border: 1.5px solid var(--border-light) !important;
+  border-radius: 8px !important;
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  color: var(--text-muted) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  min-width: unset !important;
+  box-shadow: none !important;
+}
+
+.tableActionBtn:hover {
+  background: var(--bg-primary) !important;
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  transform: translateY(-2px);
+}
+
+:global([data-theme="dark"]) .tableActionBtn {
+  border-color: var(--border-dark) !important;
+  color: var(--text-muted) !important;
+}
+
+:global([data-theme="dark"]) .tableActionBtn:hover {
+  background: rgba(184, 3, 12, 0.1) !important;
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+.buttonGroup {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 8px;
+}
+/* Modal Form Styles */
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 8px 0;
+}
+
+.formRow {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .formRow {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.formField {
+  flex: 1;
+}
+
+.formFieldWide {
+  flex: 1.5;
+}
+
+.formFieldSmall {
+  flex: 0.5;
+}
+
+.formSectionDivider {
+  margin: 12px 0 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.formSectionDivider::before,
+.formSectionDivider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--border-light);
+  opacity: 0.6;
+}
+
+.formSectionLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 0 4px;
+}
+
+.saveButton {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  font-weight: 800 !important;
+  padding: 8px 24px !important;
+  border-radius: 10px !important;
+  transition: all 0.2s !important;
+}
+
+.editButton {
+  background-color: var(--bg-primary) !important;
+  color: var(--primary-color) !important;
+  border: 1px solid var(--primary-color) !important;
+  font-weight: 800 !important;
+  padding: 8px 24px !important;
+  border-radius: 10px !important;
+  transition: all 0.2s !important;
+}
+
+.saveButton:hover,
+.editButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(184, 3, 12, 0.3) !important;
+}
+
+.cancelButton {
+  color: var(--text-secondary) !important;
+  font-weight: 700 !important;
+}

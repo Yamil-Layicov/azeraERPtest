@@ -1,0 +1,93 @@
+.container {
+    margin-top: 24px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    align-self: stretch;
+    box-sizing: border-box;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    background: white;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.table {
+    width: max(100%, 1400px);
+    border-collapse: collapse;
+}
+
+.th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    color: #6c757d;
+    border-bottom: 2px solid #e9ecef;
+    border-right: 1px solid #e9ecef;
+    white-space: nowrap;
+    background-color: #f8f9fa;
+    vertical-align: middle;
+}
+
+.thCenter {
+    text-align: center;
+}
+
+.thHeadingTwoLines {
+    white-space: normal;
+    line-height: 1.35;
+    vertical-align: middle;
+}
+
+.tr {
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.15s ease;
+}
+
+.tr:hover {
+    background-color: #f8f9fa;
+}
+
+
+
+.td {
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #495057;
+    border-bottom: 1px solid #f0f0f0;
+    border-right: 1px solid #e9ecef;
+    white-space: nowrap;
+}
+
+.workYearCell {
+    white-space: pre-line;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.35;
+}
+
+.deleteButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ef4444;
+    padding: 4px;
+    border: 1px solid #e28686;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deleteButton:hover {
+    background-color: #fee2e2;
+}
+
+.actionTd {
+    width: 85px; /* Increased for 2 buttons */
+    text-align: center;
+    padding: 8px 4px;
+}

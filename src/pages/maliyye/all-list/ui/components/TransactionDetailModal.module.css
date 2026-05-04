@@ -1,0 +1,293 @@
+/* Ultra-Modern Premium Compact Modal Design */
+.modalWidth {
+  max-width: 700px !important;
+  width: 100% !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 0.25rem;
+  font-family: inherit;
+}
+
+/* Quick Stats Section */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.statCard {
+  background: var(--bg-surface, #ffffff);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.02),
+    0 1px 2px rgba(0, 0, 0, 0.01);
+  transition:
+    transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.statCard:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.04),
+    0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.statLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted, #9ca3af);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.statValue {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-black, #111827);
+  letter-spacing: -0.01em;
+}
+
+.statValueAmount {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #10b981;
+  letter-spacing: -0.01em;
+}
+
+/* Details Section */
+.detailsSection {
+  background: var(--bg-surface, #fcfcfc);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1rem;
+  column-gap: 1.5rem;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.detailLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted, #6b7280);
+}
+
+.detailValue {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-black, #1f2937);
+}
+
+.fullSpan {
+  grid-column: 1 / -1;
+}
+
+.sectionTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-black, #111827);
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sectionTitle::before {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 14px;
+  background-color: var(--primary-base, #3b82f6);
+  border-radius: 3px;
+}
+
+.approversGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.approverCard {
+  background: var(--bg-surface, #ffffff);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+  padding: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.approverCard:hover {
+  background-color: #f8fafc;
+  border-color: rgba(59, 130, 246, 0.15);
+}
+
+.approverAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.approverInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.approverName {
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: var(--text-black, #111827);
+}
+
+.approverLimit {
+  font-size: 0.7rem;
+  color: var(--text-muted, #6b7280);
+}
+
+/* Documents Section */
+.documentsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.documentCard {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  background-color: var(--bg-surface, #ffffff);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.documentCard:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.docIcon {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.docName {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-black, #334155);
+}
+
+.noteBox {
+  background-color: #fefce8;
+  border: 1px solid #fef08a;
+  padding: 0.85rem;
+  border-radius: 8px;
+  color: #854d0e;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Footer & Buttons */
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  margin-top: 0.25rem;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: -0.75rem;
+}
+
+.approveButton {
+  background-color: #d62828 !important;
+  border-color: #d62828 !important;
+  color: white !important;
+  padding: 0.45rem 1rem !important;
+  font-size: 0.85rem !important;
+  height: 38px !important;
+}
+
+.approveButton:hover {
+  background-color: #c1121f !important;
+  border-color: #c1121f !important;
+}
+
+.closeButton {
+  padding: 0.45rem 1rem !important;
+  font-size: 0.85rem !important;
+  height: 38px !important;
+}
+
+/* Dark Mode Adjustments */
+:global([data-theme="dark"]) .statCard,
+:global([data-theme="dark"]) .detailsSection,
+:global([data-theme="dark"]) .approverCard,
+:global([data-theme="dark"]) .documentCard {
+  background: var(--bg-container, #1e293b);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+:global([data-theme="dark"]) .statCard:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+:global([data-theme="dark"]) .approverCard:hover {
+  background-color: #0f172a;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+:global([data-theme="dark"]) .documentCard:hover {
+  background-color: #0f172a;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+:global([data-theme="dark"]) .approverAvatar {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  color: #bfdbfe;
+}
+
+:global([data-theme="dark"]) .noteBox {
+  background-color: rgba(66, 32, 6, 0.5);
+  border-color: #854d0e;
+  color: #fef08a;
+}

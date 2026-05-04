@@ -1,0 +1,83 @@
+.switch {
+  --switch-bg: #f3f4f6; 
+  --switch-padding: 4px;
+  --slider-bg: var(--primary-color); 
+  --text-active: #ffffff;
+  --text-inactive: var(--text-muted);
+  
+  --switch-easing: cubic-bezier(0.47, 1.64, 0.41, 0.8); 
+
+  width: fit-content;
+  min-width: 200px; 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  border-radius: 9999px;
+  cursor: pointer;
+  background-color: var(--switch-bg);
+  border: 1px solid var(--border-light);
+  user-select: none;
+  isolation: isolate;
+  height: 42px; 
+}
+
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.label {
+  display: grid;
+  place-content: center;
+  transition: opacity 300ms ease-in-out 150ms, color 300ms ease;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  z-index: 2;
+  color: var(--text-inactive);
+  text-align: center;
+}
+
+.switch::before {
+  content: "";
+  position: absolute;
+  background-color: var(--slider-bg);
+  border-radius: inherit;
+  inset: var(--switch-padding) 50% var(--switch-padding) var(--switch-padding);
+  transition: inset 500ms var(--switch-easing);
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.switch:has(.checkbox:checked)::before {
+  inset: var(--switch-padding) var(--switch-padding) var(--switch-padding) 50%;
+}
+
+.switch:has(.checkbox:checked) .label:last-of-type {
+  color: var(--text-active);
+}
+
+.switch:has(.checkbox:not(:checked)) .label:first-of-type {
+  color: var(--text-active);
+}
+
+.switch:has(.checkbox:checked):hover::before {
+  inset: var(--switch-padding) var(--switch-padding) var(--switch-padding) 45%;
+}
+
+.switch:has(.checkbox:not(:checked)):hover::before {
+  inset: var(--switch-padding) 45% var(--switch-padding) var(--switch-padding);
+}
+
+:global([data-theme="dark"]) .switch {
+  --switch-bg: var(--bg-container);
+  border-color: var(--border-muted);
+  --slider-bg: #b8030c; 
+}

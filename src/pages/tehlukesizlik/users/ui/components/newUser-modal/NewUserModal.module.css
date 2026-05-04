@@ -1,0 +1,325 @@
+.filterSection {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.actionSection {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.tableControls {
+  margin-bottom: 0px !important;
+}
+.tableToolbar {
+  margin-bottom: 10px;
+}
+.filterContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width: 768px) {
+  .filterContainer {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+.filterSelectWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  max-width: 150px;
+}
+
+.filterSelect {
+  margin-bottom: 0px;
+  padding: 0 !important;
+  flex: 1;
+}
+
+.filterSelect button {
+  height: 34px !important;
+  min-height: 34px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.usernameInputV2 {
+  flex: 1;
+  max-height: 34px;
+}
+.usernameInput{
+    max-height: 36px;
+}
+
+.usernameInputV2 > div {
+  margin-bottom: 0 !important;
+}
+
+.usernameInputV2 input {
+  height: 34px !important;
+}
+
+.searchBtn {
+  height: 34px !important;
+  width: 34px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-color: rgb(216, 215, 215) !important;
+  background-color: transparent !important;
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-weight: 500;
+  color: #666;
+}
+
+.paginationWrapper {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.footerActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+  padding-top: 30px;
+  gap: 4px;
+  padding-right: 16px;
+}
+
+.confirmBtn {
+  background-color: #c41212 !important;
+  border-color: #c41212 !important;
+  padding: 5px 20px !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important;
+  font-size: 15px !important;
+  transition: all 0.2s ease !important;
+  height: 34px !important;
+  color: white !important;
+}
+
+.confirmBtn:hover:not(:disabled) {
+  background-color: #a80f0f !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(196, 18, 18, 0.2) !important;
+}
+
+.modalHeaderTitle {
+  display: flex;
+  align-items: center;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid gray;
+  cursor: pointer;
+  padding: 3px 12px 3px 5px;
+  border-radius: 8px;
+  color: black;
+  transition: all 0.2s ease;
+  margin-right: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.backBtn:hover {
+  transform: translateY(-1px);
+}
+
+.backIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.backText {
+  line-height: 1;
+}
+
+.modalLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.tab1Layout {
+  width: 100%;
+}
+
+.tab2Layout {
+  width: 100%;
+  min-height: 400px;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tableContainer {
+  flex: 1;
+  min-height: 350px;
+  max-height: 500px;
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  margin-bottom: 16px;
+  background-color: #fff;
+}
+
+.tab2Wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.personInfoGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.infoItem {
+  flex: 1 1 calc(50% - 16px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 200px;
+}
+
+.fullWidth {
+  flex: 1 1 100% !important;
+}
+
+.infoLabel {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+.infoValue {
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+}
+
+.tab2Content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputWithAction {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.inputGroup {
+  flex: 1;
+}
+
+.usernameInput {
+  margin-bottom: 0 !important;
+}
+
+.checkWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+}
+
+.checkIcon {
+  color: #52c41a;
+  font-size: 24px;
+}
+
+.errorIcon {
+  color: #f5222d;
+  font-size: 24px;
+}
+
+.errorWrapper {
+  min-height: 20px;
+}
+
+.errorMessage {
+  color: #f5222d;
+  font-size: 12px;
+}
+
+.ldapBtn {
+  width: fit-content !important;
+  height: 34px !important;
+}
+
+.tab2Footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.saveBtn {
+  height: 36px !important;
+  background-color: #c41212 !important;
+  color: white !important;
+}
+
+.saveBtnV2 {
+  height: 34px !important;
+  background-color: #c41212 !important;
+  color: white !important;
+}
+
+.cancelBtn {
+  height: 34px !important;
+  background-color: #f0f0f0 !important;
+  color: #333 !important;
+  border: 1px solid #d9d9d9 !important;
+}
+
+.selectedRowBtn {
+  background-color: #e6f7ff !important;
+  border-color: #91d5ff !important;
+  color: #1890ff !important;
+}
+
+.selectBtn {
+  padding: 2px 20px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  border: 1px solid #2e7d32 !important;
+  color: #2e7d32 !important;
+  background-color: white !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer;
+}

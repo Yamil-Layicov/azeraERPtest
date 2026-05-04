@@ -1,0 +1,335 @@
+.panelContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--bg-white);
+  color: var(--text-primary);
+  padding-right: 1.5rem;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 0.8rem;
+}
+
+.panelTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary, #111827);
+  margin: 0;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  color: var(--text-muted);
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtn:hover {
+  background-color: var(--bg-container);
+  color: var(--text-primary);
+}
+
+.panelBody {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .panelBody {
+    padding: 0 !important;
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 8px;
+  margin: 2rem 0 0.7rem;
+  justify-content: flex-end;
+}
+@media (max-width: 1350px) {
+  .buttonGroup {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 1200px) {
+  .buttonGroup {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.actionBtn {
+  padding: 4px 12px !important;
+  height: 32px !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+/* Mobil üçün button-ları ortala */
+@media (max-width: 768px) {
+  .panelContainer {
+    padding-right: 0 !important; /* Mobilde padding-right olmamalıdır */
+  }
+
+  .buttonGroup {
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 1.5rem 0 0.7rem; /* Margin-i azalt */
+  }
+
+  .actionBtn {
+    flex: 1;
+    min-width: 0;
+    max-width: 200px;
+    padding: 4px 10px !important; /* Padding-i bir az azalt */
+    font-size: 0.78rem !important; /* Font size-i bir az azalt */
+  }
+}
+
+.contentBox {
+  padding: 0;
+  border-radius: 8px;
+  background-color: var(--bg-white);
+  overflow: hidden;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 16px;
+  transition: background-color 0.2s;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  flex: 0 0 130px;
+}
+
+.value {
+  font-size: 15px;
+  color: #101828;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  min-height: 24px;
+  width: 100%;
+}
+
+.value > span:first-child {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  line-height: 1.4;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 8px;
+  border-radius: 16px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 18px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.badgeSuccess {
+  background-color: #9ce7b7;
+  color: #126130;
+}
+
+.badgeError {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.badgeGray {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.placeholderForm {
+  padding: 2rem;
+  border: 2px dashed var(--border-muted);
+  border-radius: 8px;
+  text-align: center;
+  color: var(--text-muted);
+  background-color: var(--bg-container);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--border-light);
+  transition: 0.3s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--bg-white);
+  transition: 0.3s;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.switch input:checked + .slider {
+  background-color: #34c759;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.statusFeedback {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  margin-left: 15px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.statusFeedbackSuccess {
+  color: #166534;
+}
+
+.statusFeedbackError {
+  color: #991b1b;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.switch input:disabled + .slider {
+  opacity: 1;
+  cursor: not-allowed;
+  background-color: var(--border-light);
+}
+
+.switch input:disabled:checked + .slider {
+  background-color: var(--border-light);
+}
+
+.switch input:disabled:checked + .slider:before {
+  transform: translateX(0);
+}
+
+:global([data-theme="dark"]) .panelHeader {
+  border-color: var(--border-light);
+}
+
+:global([data-theme="dark"]) .panelTitle {
+  color: var(--text-primary);
+}
+
+:global([data-theme="dark"]) .closeBtn {
+  color: var(--text-muted);
+}
+
+:global([data-theme="dark"]) .closeBtn:hover {
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+}
+
+:global([data-theme="dark"]) .panelBody {
+  color: var(--text-primary);
+}
+
+:global([data-theme="dark"]) .contentBox {
+  background-color: var(--bg-sidebar);
+}
+
+:global([data-theme="dark"]) .label {
+  color: var(--text-muted);
+}
+
+:global([data-theme="dark"]) .value {
+  color: var(--text-primary);
+}
+
+:global([data-theme="dark"]) .badgeGray {
+  background-color: #1f2937;
+  color: var(--text-secondary);
+}
+
+:global([data-theme="dark"]) .placeholderForm {
+  background-color: var(--bg-container);
+  color: var(--text-muted);
+  border-color: var(--border-light);
+}
+
+:global([data-theme="dark"]) .slider {
+  background-color: var(--border-light);
+}
+
+:global([data-theme="dark"]) .slider:before {
+  background-color: #f9fafb;
+}
+
+@media (max-width: 768px) {
+  :global([data-theme="dark"]) .panelContainer,
+  :global([data-theme="dark"]) .contentBox {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+}

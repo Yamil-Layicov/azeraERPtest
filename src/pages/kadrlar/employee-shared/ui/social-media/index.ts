@@ -1,0 +1,2 @@
+export { SocialMediaSection } from "./SocialMediaSection";
+

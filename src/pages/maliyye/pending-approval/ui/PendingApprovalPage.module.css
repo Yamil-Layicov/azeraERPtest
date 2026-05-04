@@ -1,0 +1,43 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.actionsGroup {
+  display: flex;
+  align-items: center;
+}
+
+.rowNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--text-primary);
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+:global([data-theme="dark"]) .rowNumber {
+  color: var(--text-muted);
+}
+
+.pagination {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todayDate {
+  color: #ff0000;
+  font-weight: 500;
+}
+
+.futureDate {
+  color: #f59e0b; 
+  font-weight: 500;
+}

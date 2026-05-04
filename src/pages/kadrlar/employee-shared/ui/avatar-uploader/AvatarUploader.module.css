@@ -1,0 +1,294 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+}
+
+.avatarUploader {
+  width: 200px; /* Eni */
+  height: 300px; /* Hündürlüyü (4x6 nisbəti üçün) */
+  border-radius: 6px; /* Künclər azca yumru */
+  border: 2px dashed var(--border-muted);
+  background-color: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden; /* Şəkil çərçivədən çıxmasın */
+  margin-top: 3rem;
+}
+
+.avatarUploader:hover {
+  border-color: var(--primary-color);
+  background-color: var(--bg-container);
+}
+
+.avatarPreview {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Şəkil tam görünsün, kəsilməsin */
+  object-position: center;
+  border-radius: 6px;
+}
+
+/* Default insan ikonu arxada */
+.defaultAvatarBg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 65%;
+  height: 65%; /* İkonun ölçüsü */
+  color: var(--text-muted);
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Digər hissələr olduğu kimi qalır */
+.uploadContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.uploadIcon {
+  width: 40px;
+  height: 40px;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.uploadText {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 0 10px;
+}
+
+.allowedText {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 0 10px;
+  font-weight: 500;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.zoomAvatarBtn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.zoomAvatarBtn:hover {
+  color: var(--primary-color, #2563eb);
+  border-color: var(--primary-color, #2563eb);
+}
+
+.zoomIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.clearAvatarBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 50%; /* Buton dairəvi qalsın, gözəl görünür */
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.clearAvatarBtn:hover {
+  background-color: #fff;
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+.clearIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.fileInfo {
+  margin-top: 0.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0 4px;
+}
+
+.fileName {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.fileSize {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.compressionBadge {
+  display: inline-block;
+  margin-top: 0.35rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--primary-color, #1d4ed8);
+  background-color: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.compressingText {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Şəkil önizləmə modalı */
+.previewModalContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: 1rem;
+}
+
+.previewModalImage {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.loadingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+  gap: 0.75rem;
+}
+
+:global([data-theme="dark"]) .loadingOverlay {
+  background-color: rgba(15, 23, 42, 0.8);
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border-light);
+  border-top-color: var(--primary-color, #2563eb);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.loadingText {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- DARK MODE --- */
+:global([data-theme="dark"]) .avatarUploader {
+  background-color: var(--bg-container);
+  border-color: var(--border-muted);
+}
+
+:global([data-theme="dark"]) .clearAvatarBtn {
+  background-color: rgba(30, 41, 59, 0.9);
+  border-color: var(--border-muted);
+}
+
+:global([data-theme="dark"]) .zoomAvatarBtn {
+  background-color: rgba(30, 41, 59, 0.9);
+  border-color: var(--border-muted);
+}
+
+:global([data-theme="dark"]) .zoomAvatarBtn:hover {
+  color: #93c5fd;
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+:global([data-theme="dark"]) .clearAvatarBtn:hover {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+:global([data-theme="dark"]) .compressionBadge {
+  color: #93c5fd;
+  background-color: rgba(37, 99, 235, 0.25);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+/* Mobil ekranlar üçün ölçünü biraz kiçildib nisbəti saxlayırıq */
+@media (max-width: 768px) {
+  .avatarUploader {
+    width: 160px;  /* Kiçildilmiş en */
+    height: 240px; /* Kiçildilmiş hündürlük (160 * 1.5) */
+    margin-top: 1rem;
+  }
+
+  .uploadIcon {
+    width: 28px;
+    height: 28px;
+  }
+}

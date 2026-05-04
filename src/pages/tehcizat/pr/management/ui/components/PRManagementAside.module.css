@@ -1,0 +1,119 @@
+.panelContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.panelTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.closeBtn:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.panelBody {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 2rem;
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  color: var(--text-primary);
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 700;
+  /* color: var(--text-muted); */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.descriptionText {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  background-color: var(--bg-body);
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.simpleTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.simpleTable th {
+  text-align: left;
+  padding: 10px 12px;
+  background-color: var(--bg-body);
+  border-bottom: 1px solid var(--border-color);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.simpleTable td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.totalRow td {
+  font-weight: 700;
+  background-color: var(--bg-body);
+}
+
+.panelFooter {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.footerButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.footerBtn {
+  min-width: 120px;
+}

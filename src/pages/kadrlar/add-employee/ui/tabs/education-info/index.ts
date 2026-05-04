@@ -1,0 +1,2 @@
+export { EducationInfoTab } from "./EducationInfoTab";
+

@@ -1,0 +1,11 @@
+.container {
+     padding: 24px 0;
+     margin-bottom: 24px;
+   }
+   
+   .title {
+     font-size: 18px;
+     font-weight: 600;
+     color: #101828;
+     margin-bottom: 24px;
+   }

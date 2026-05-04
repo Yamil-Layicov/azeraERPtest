@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contentWrapper {
+  display: flex;
+  gap: 2rem;
+  flex: 1;
+  overflow: hidden;
+}
+@media (max-width: 950px) {
+  .contentWrapper {
+    flex-direction: column;
+  }
+}
+
+.tableSection {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  @media (max-width: 950px) {
+    width: 100%;
+  }
+}
+.divider {
+  width: 1px;
+  background-color: #f1f5f9;
+}
+.tableWrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.tableToolbarWrapper {
+  padding: 1px;
+  display: flex;
+  justify-content: flex-end;
+}
+.tableContainer {
+  max-width: 100%;
+  overflow: auto;
+}
+
+.paginationWrapper {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: center;
+}

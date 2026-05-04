@@ -1,0 +1,128 @@
+.wrapper {
+  width: 100%;
+  margin-top: 24px;
+}
+
+/* Laptopda cədvəlin kəsilməməsi üçün sürüşdürmə konteyneri */
+.tableScroll {
+  width: 100%;
+  border-radius: 8px;
+  background: var(--bg-white, #ffffff);
+  overflow-x: auto;
+  border: 1px solid var(--border-light, #e5e7eb);
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  box-shadow: none;
+}
+
+.tableScroll table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1500px;
+  table-layout: auto;
+}
+
+.tableScroll table th,
+.tableScroll table td {
+  white-space: nowrap; 
+  padding: 12px 10px;
+}
+
+/* İş yeri və vəzifəsi (1. sütun) üçün sətir qırma eyni WorkTable-dakı kimi */
+.tableScroll table td:nth-child(1) {
+  white-space: normal !important;
+  word-break: break-word;
+  min-width: 250px !important;
+  max-width: 400px !important;
+  line-height: 1.4;
+  vertical-align: middle;
+}
+
+.tableScroll table th:nth-child(1) {
+  white-space: normal !important;
+  width: 300px !important;
+}
+
+/* Əməliyyat (9. sütun) - Genişliyin və boşluqların azaldılması */
+.wrapper table th:nth-child(9),
+.wrapper table td:nth-child(9) {
+  width: 80px !important;
+  min-width: 80px !important;
+  padding: 10px 4px !important;
+  text-align: center;
+}
+
+/* Başlıqların hündürlüyü və şrifti (WorkTable ilə eyni) */
+.wrapper table th {
+  padding: 12px 8px;
+  font-size: 13px;
+  background-color: #f9fafb;
+  color: #374151;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Satır Renklendirme */
+.pendingRow td {
+  background-color: #fefcbf !important; 
+}
+
+.approvedRow td {
+  background-color: #f0fff4 !important; 
+}
+
+.tableRow:hover td {
+  filter: brightness(0.95);
+}
+
+.viewBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light, #e5e7eb);
+  background: var(--bg-white, #ffffff);
+  color: #3b82f6;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.viewBtn:hover {
+  background-color: #eff6ff;
+  border-color: #3b82f6;
+}
+
+.removeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light, #e5e7eb);
+  background: var(--bg-white, #ffffff);
+  color: #ef4444;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.removeBtn:hover {
+  background-color: #fef2f2;
+  border-color: #ef4444;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 1600px) {
+  .wrapper table th, 
+  .wrapper table td {
+    font-size: 12.5px;
+    padding: 8px 6px;
+  }
+}

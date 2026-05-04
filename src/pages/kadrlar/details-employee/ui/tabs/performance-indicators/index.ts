@@ -1,0 +1,1 @@
+export { default as PerformanceIndicatorsTab } from "./PerformanceIndicatorsTab";

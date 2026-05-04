@@ -1,0 +1,95 @@
+.otpGroup {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.targetMessage {
+  text-align: center;
+  color: var(--text-secondary, #6b7280);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  padding: 0 12px;
+}
+
+.targetMessage strong {
+  color: var(--text-primary, #111827);
+  font-weight: 700;
+  font-size:16px;
+}
+
+.otpInput {
+  width: 54px;
+  height: 64px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  border: 2px solid var(--border-light, #e5e7eb);
+  border-radius: 12px;
+  background-color: var(--bg-container, #ffffff);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.otpInput:focus {
+  outline: none;
+  border-color: var(--primary-color, #b8030c);
+  box-shadow: 0 0 0 4px rgba(184, 3, 12, 0.1);
+}
+
+:global([data-theme="dark"]) .otpInput {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light, #e5e7eb);
+}
+
+:global([data-theme="dark"]) .modalFooter {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.cancelButton {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border-light, #e5e7eb);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancelButton:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.submitButton {
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--primary-color, #b8030c);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.submitButton:not(:disabled):hover {
+  background-color: var(--primary-hover, #a0020a);
+}

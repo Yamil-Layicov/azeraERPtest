@@ -1,0 +1,1 @@
+export { default as RelativesInfoTab, type RelativesInfoTabHandle } from "./RelativesInfoTab";

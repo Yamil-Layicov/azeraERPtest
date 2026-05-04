@@ -1,0 +1,1 @@
+export { default as CreateEmployeePage } from './ui/CreateEmployeePage';

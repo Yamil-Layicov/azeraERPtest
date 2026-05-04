@@ -1,0 +1,1 @@
+export { RelativesTable, type RelativeItem } from "./RelativesTable";

@@ -1,0 +1,148 @@
+/* SİLİNDİ: modalOverlay, modalContainer, modalHeader, modalTitle, closeButton, modalBody, keyframes */
+
+.customModalWidth {
+  max-width: 900px !important;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-height: calc(100vh - 200px);
+  overflow: hidden;
+}
+
+/* Search Row */
+.searchRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 1rem;
+  align-items: flex-end; 
+}
+
+.searchBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;  
+  height: 40px; 
+  border-radius: 8px;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  color: var(--text-muted); 
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.searchBtn:hover {
+  background-color: var(--bg-light);
+  border-color: var(--border-muted);
+  color: var(--text-primary); 
+}
+
+.searchIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Table Container */
+.tableContainer {
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+}
+
+.tableContainer :global(.tableWrapper) {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.tableContainer :global(.tableWrapper table) {
+  width: 100%;
+}
+
+.tableContainer :global(.tableWrapper thead) {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--bg-white);
+}
+
+:global([data-theme="dark"]) .tableContainer :global(.tableWrapper thead) {
+  background-color: var(--bg-container);
+}
+
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Modal Footer */
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--border-light);
+}
+
+/* Cancel Button */
+.cancelBtn {
+  /* Button componentinin clear variantı onsuz da yaxşıdır, əlavə stilə ehtiyac azdır */
+  min-width: 80px;
+}
+
+/* Select Button in Table */
+.selectBtn {
+  padding: 2px 10px !important;
+  font-size: 12px !important;
+  height: 26px !important;
+  min-height: 0 !important;
+  line-height: 1 !important;
+  font-weight: 500 !important;
+}
+
+/* Dark Mode */
+:global([data-theme="dark"]) .searchBtn {
+  background-color: var(--bg-container);
+  border-color: var(--border-light);
+  color: var(--text-muted);
+}
+
+:global([data-theme="dark"]) .searchBtn:hover {
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+}
+
+:global([data-theme="dark"]) .tableContainer {
+  border-color: var(--border-light);
+}
+
+:global([data-theme="dark"]) .modalFooter {
+  border-color: var(--border-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .searchRow {
+    grid-template-columns: 1fr;
+    align-items: stretch; 
+  }
+  .searchBtn {
+    width: 100%;
+  }
+}
+

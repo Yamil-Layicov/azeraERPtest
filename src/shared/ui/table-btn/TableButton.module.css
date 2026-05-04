@@ -1,0 +1,118 @@
+.tableButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: transparent;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  stroke-width: 1.5px;
+}
+
+.tableButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Detail (Göz) - Göy/Mavi tonlar */
+.detail {
+  color: #3b82f6;
+  border-color: #dbeafe;
+  background-color: #eff6ff;
+}
+
+.detail:hover:not(:disabled) {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+/* Delete (Zibil qutusu) - Qırmızı tonlar */
+.delete {
+  color: #ef4444;
+  border-color: #fee2e2;
+  background-color: #fef2f2;
+}
+
+.delete:hover:not(:disabled) {
+  background-color: #ef4444;
+  color: white;
+  border-color: #ef4444;
+}
+
+/* Print (Printer) - Boz/Neytral tonlar */
+.print {
+  color: #6b7280;
+  border-color: #e5e7eb;
+  background-color: #f9fafb;
+}
+
+.print:hover:not(:disabled) {
+  background-color: #4b5563;
+  color: white;
+  border-color: #4b5563;
+}
+
+/* Approve (Təsdiq) - Yaşıl/Teal tonlar */
+.approve {
+  color: #0B9489;
+  border-color: rgba(11, 148, 137, 0.2);
+  background-color: rgba(11, 148, 137, 0.05);
+}
+
+.approve:hover:not(:disabled) {
+  background-color: #0B9489;
+  color: white;
+  border-color: #0B9489;
+}
+
+/* Dark mode */
+:global([data-theme="dark"]) .detail {
+  background-color: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+:global([data-theme="dark"]) .delete {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+:global([data-theme="dark"]) .print {
+  background-color: rgba(107, 114, 128, 0.1);
+  border-color: rgba(107, 114, 128, 0.2);
+  color: #9ca3af;
+}
+
+:global([data-theme="dark"]) .approve {
+  background-color: rgba(20, 184, 166, 0.1);
+  border-color: rgba(20, 184, 166, 0.2);
+}
+
+
+.edit {
+  color: #f59e0b; /* Amber-500 */
+  border-color: #fcd34d;
+  background-color: #fffbeb;
+}
+
+.edit:hover:not(:disabled) {
+  background-color: #f59e0b;
+  color: white;
+  border-color: #f59e0b;
+}
+
+/* Dark mode for edit */
+:global([data-theme="dark"]) .edit {
+  background-color: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}

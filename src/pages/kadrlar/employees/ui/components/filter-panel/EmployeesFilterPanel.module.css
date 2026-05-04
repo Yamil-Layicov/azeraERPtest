@@ -1,0 +1,142 @@
+.container {
+  background-color: var(--color-white);
+  padding: 20px 0px;
+  margin-bottom: 24px;
+  color: var(--color-black);
+}
+
+/* --- LAYOUT (GRID) --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  row-gap: 20px;
+  align-items: end;
+}
+
+/* --- LABELS --- */
+.label,
+.container :global(label) {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-black);
+  margin-bottom: 6px;
+}
+
+/* Input və Textarea Placeholder */
+.container :global(input::placeholder),
+.container :global(textarea::placeholder) {
+  color: #667085 !important; /* Standart tünd rəng */
+  font-weight: 400;
+  opacity: 1;
+}
+
+/* Select Placeholder ("Seçin...") */
+.container :global(span[data-placeholder="true"]) {
+  color: #667085 !important; /* Input ilə eyni rəng */
+  font-weight: 400;
+  opacity: 1;
+}
+
+/* ModernDatePicker Placeholder ("dd.mm.yyyy") */
+.container :global(.react-datepicker__input-container input::placeholder),
+.container .datePickerField :global(input::placeholder) {
+  color: #667085 !important; /* Input ilə eyni rəng */
+  font-weight: 400;
+  opacity: 1;
+}
+
+/* 2. Dolu olanda (Value) mətn rəngi (Qara) */
+.container :global(input),
+.container
+  :global(
+    button[aria-haspopup="listbox"]
+      > span:first-of-type:not([data-placeholder="true"])
+  ) {
+  color: #101828 !important;
+  font-weight: 400;
+}
+
+:global([data-theme="dark"]) .container :global(input),
+:global([data-theme="dark"])
+  .container
+  :global(
+    button[aria-haspopup="listbox"]
+      > span:first-of-type:not([data-placeholder="true"])
+  ) {
+  color: #ffffff !important;
+}
+
+/* 3. Ölçüləri standartlaşdırmaq (Input və Select eyni boyda olsun) */
+.container :global(button[aria-haspopup="listbox"]),
+.container :global(input) {
+  height: auto !important;
+  min-height: 40px !important; /* Hamısı eyni hündürlükdə */
+  padding: 0.5rem 0.75rem !important;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+/* Dropdown optionları incə olsun */
+:global([data-filter-panel] [class*="optionItem"]),
+:global([data-filter-panel] [class*="optionName"]) {
+  font-weight: 400;
+}
+
+/* --- COMPOSITE FIELDS (Telefon və Sosial) --- */
+.compositeGroup {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.compositeSelect {
+  min-width: 140px !important;
+  width: 140px !important;
+  flex-shrink: 0;
+}
+
+.compositeInput {
+  flex-grow: 1;
+}
+
+/* --- ACTIONS (Buttons) --- */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 16px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.actionBtn {
+  min-height: 36px !important;
+  height: 36px !important;
+  padding: 0 16px !important;
+  font-size: 14px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .compositeGroup {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .compositeSelect {
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,36 @@
+export { departmentsService } from "./api";
+export { 
+  useDepartments, 
+  useGetDepartmentById,
+  useCompaniesLookup,
+  useRootCompaniesLookup,
+  useOrganizationUnitTypeLookup,
+  useDocumentTypesLookup,
+  useSubCompaniesLookup,
+  useEmployeesLookup,
+  useNodesLookup,
+  usePositionsLookup,
+  usePositionsLookupPaged,
+  useStaffingByOrganizationUnitId,
+  useGetStaffingById,
+  useSetStaffingActive,
+  useUpdateStaffing,
+  useDeleteStaffing,
+  useCreateStaffing,
+  useCreateDepartment, 
+  useUpdateDepartment, 
+  useDeleteDepartment,
+  DEPARTMENTS_QUERY_KEYS 
+} from "./hooks";
+export type {
+  DepartmentEntry,
+  GetDepartmentsRequest,
+  GetDepartmentsResponse,
+  DepartmentsResult,
+  CreateDepartmentRequest,
+  CreateDepartmentResponse,
+  UpdateDepartmentRequest,
+  UpdateDepartmentResponse,
+  DeleteDepartmentResponse,
+  StaffingEntry,
+} from "./model";

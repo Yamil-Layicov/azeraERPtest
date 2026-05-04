@@ -1,0 +1,181 @@
+.container {
+  padding: 24px;
+  background-color: var(--bg-white, #fff);
+  border-radius: 12px;
+}
+
+.tabsContainer {
+  display: flex;
+  background-color: #f3f4f6;
+  padding: 4px;
+  border-radius: 10px;
+  width: fit-content;
+  margin-bottom: 32px;
+}
+
+.tabItem {
+  padding: 8px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tabItem:hover {
+  color: #374151;
+}
+
+.activeTab {
+  background-color: white;
+  color: #b8030c;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.tabPanel {
+  min-height: 400px;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.fullWidth {
+  grid-column: span 2;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary, #374151);
+}
+
+.statusBadge {
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.statusDraft {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+.statusCompleted {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.footer {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.tableContainer {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: 12px;
+  background-color: var(--bg-light, #f9fafb);
+  border-bottom: 1px solid var(--border-light, #e5e7eb);
+  font-size: 13px;
+  color: var(--text-muted, #6b7280);
+}
+
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border-light, #e5e7eb);
+}
+
+.actionsCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.addBtn {
+  color: #10b981;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addBtn:hover {
+  background-color: #ecfdf5;
+  transform: scale(1.1);
+}
+
+.deleteBtn {
+  color: #ef4444;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteBtn:hover {
+  background-color: #fef2f2;
+  transform: scale(1.1);
+}
+
+.diffPositive {
+  color: #059669;
+  font-weight: 600;
+  margin-top: 25px;
+   display: flex;
+  height: 100% !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.diffNegative {
+  color: #dc2626;
+  font-weight: 600;
+  display: flex;
+  height: 100% !important;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+@media (max-width: 768px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  .fullWidth {
+    grid-column: span 1;
+  }
+}

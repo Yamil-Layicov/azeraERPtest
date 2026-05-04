@@ -1,0 +1,450 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  /* Font */
+  font-family: "Poppins", sans-serif;
+
+  /* Brand Colors */
+  --primary-color: #b8030c;
+  --primary-hover: #9c0209;
+  --primary-dark: #7a0107;
+
+  /* Text Colors */
+  --text-primary: #1a1a1a;
+  --text-secondary: #1f2937;
+  --text-muted: #9ca3af;
+  --text-white: #ffffff;
+  --text-black: #000000;
+
+  /* Background Colors */
+  --bg-white: #ffffff;
+  --bg-light: #fefefe;
+  --bg-container: #f1f5f9;
+  --bg-sidebar: #ffffff;
+  --bg-navbar: #ffffff;
+  --bg-primary: #f3f4f6;
+  --bg-card: #ffffff;
+
+  /* Border Colors */
+  --border-light: #e5e7eb;
+  --border-muted: #d1d5db;
+
+  /* Spacing */
+  --spacing-xs: 5px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+  --spacing-2xl: 24px;
+  --spacing-3xl: 32px;
+
+  /* Border Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* Font Sizes */
+  --text-xs: 0.8rem;
+  --text-sm: 0.85rem;
+  --text-base: 0.9rem;
+  --text-lg: 0.95rem;
+  --text-xl: 1rem;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.1);
+  --shadow-primary: 0 4px 12px rgba(184, 3, 12, 0.3);
+  --shadow-primary-hover: 0 6px 16px rgba(184, 3, 12, 0.4);
+
+  /* Transitions */
+  --transition-fast: all 0.2s ease;
+}
+
+/* Modal open scroll lock */
+html.modal-open,
+body.modal-open {
+  overflow: hidden !important;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  .print-button-global {
+    display: none !important;
+  }
+
+  html.modal-open,
+  body.modal-open {
+    overflow: visible !important;
+    height: auto !important;
+    width: auto !important;
+    position: static !important;
+  }
+}
+
+/* Şirkət seçin select'ini "+ Yeni" butonu ilə eyni ölçüdə etmək */
+/* ID button elementindədir, wrapper div-də deyil */
+#employees-company,
+#staff-company {
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+  padding: 0.44rem 1rem !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  border-radius: 3px !important;
+  line-height: 1.2 !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+}
+
+/* Prefix icon - ilk svg */
+#employees-company svg:first-of-type,
+#staff-company svg:first-of-type {
+  width: 0.875rem !important;
+  height: 0.875rem !important;
+  margin-right: 0.5rem !important;
+  flex-shrink: 0 !important;
+}
+
+/* Arrow icon - son svg (chevron) */
+#employees-company svg:last-of-type,
+#staff-company svg:last-of-type {
+  width: 0.75rem !important;
+  height: 0.75rem !important;
+  flex-shrink: 0 !important;
+}
+
+/* Clear icon - span içindəki svg */
+#employees-company span[role="button"] svg,
+#staff-company span[role="button"] svg {
+  width: 0.75rem !important;
+  height: 0.75rem !important;
+  flex-shrink: 0 !important;
+}
+
+/* Selected text span */
+#employees-company > span:not([role]),
+#staff-company > span:not([role]) {
+  font-size: 0.85rem !important;
+  line-height: 1.2 !important;
+  font-weight: 500 !important;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --primary-color: #111827;
+  --primary-hover: #dc2626;
+  --primary-dark: #b91c1c;
+
+  --text-primary: #f3f4f6;
+  --text-secondary: #ffffff;
+  --text-muted: #747983;
+  --text-black: rgb(250, 250, 250);
+
+  --bg-white: #1e1e1e;
+  --bg-light: #374151;
+  --bg-container: #121212;
+  --bg-sidebar: #1e1e1e;
+  --bg-navbar: #1e1e1e;
+  --bg-primary: #1e1e1e;
+  --bg-card: #111827;
+  --border-light: #374151;
+  --border-muted: #4b5563;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode hover overrides */
+[data-theme="dark"] .navItem:hover {
+  color: #1f2937 !important;
+}
+
+[data-theme="dark"] .subNavItem:hover {
+  color: #1f2937 !important;
+}
+
+[data-theme="dark"] .dropdownItem:hover {
+  color: #1f2937 !important;
+}
+
+/* Dark mode hover overrides for CSS modules */
+[data-theme="dark"] [class*="navItem"]:hover {
+  color: #1f2937 !important;
+}
+
+[data-theme="dark"] [class*="subNavItem"]:hover {
+  color: #1f2937 !important;
+}
+
+[data-theme="dark"] [class*="dropdownItem"]:hover {
+  color: #1f2937 !important;
+}
+
+/* Dark mode hover overrides for icons */
+[data-theme="dark"] [class*="navItem"]:hover [class*="icon"] {
+  color: #1f2937 !important;
+}
+
+[data-theme="dark"] [class*="subNavItem"]:hover [class*="icon"] {
+  color: #1f2937 !important;
+}
+
+[data-theme="dark"] [class*="dropdownItem"]:hover [class*="dropdownIcon"] {
+  color: #1f2937 !important;
+}
+
+/* Dark mode hover overrides for navbar icons */
+[data-theme="dark"] [class*="iconButton"]:hover [class*="icon"] {
+  color: #1f2937 !important;
+}
+
+[data-theme="dark"] [class*="toggleButton"]:hover [class*="icon"] {
+  color: #1f2937 !important;
+}
+
+/* Dark mode content styles */
+[data-theme="dark"] .mainContent {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .mainContent h1,
+[data-theme="dark"] .mainContent h2,
+[data-theme="dark"] .mainContent h3,
+[data-theme="dark"] .mainContent h4,
+[data-theme="dark"] .mainContent h5,
+[data-theme="dark"] .mainContent h6 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .mainContent p,
+[data-theme="dark"] .mainContent span,
+[data-theme="dark"] .mainContent div {
+  color: var(--text-secondary);
+}
+
+/* Dark mode form elements */
+[data-theme="dark"] .mainContent input,
+[data-theme="dark"] .mainContent textarea,
+[data-theme="dark"] .mainContent select {
+  color: var(--text-primary);
+  border-color: var(--border-light);
+}
+
+[data-theme="dark"] .mainContent input:focus,
+[data-theme="dark"] .mainContent textarea:focus,
+[data-theme="dark"] .mainContent select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Dark mode labels */
+[data-theme="dark"] .mainContent label,
+[data-theme="dark"] .mainContent .label,
+[data-theme="dark"] .mainContent .form-label {
+  color: var(--text-primary);
+}
+
+/* Dark mode input placeholders */
+[data-theme="dark"] .mainContent input::placeholder,
+[data-theme="dark"] .mainContent textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* Dark mode form groups */
+[data-theme="dark"] .mainContent .form-group,
+[data-theme="dark"] .mainContent .formGroup {
+  color: var(--text-primary);
+}
+
+/* Dark mode input styles */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background-color: var(--bg-white);
+  color: var(--text-primary);
+  border-color: var(--border-light);
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] label {
+  color: var(--text-primary);
+}
+
+/* Dark mode for all form elements globally */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select,
+[data-theme="dark"] .input,
+[data-theme="dark"] .textarea,
+[data-theme="dark"] .select {
+  color: var(--text-primary);
+  border-color: var(--border-light);
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus,
+[data-theme="dark"] .input:focus,
+[data-theme="dark"] .textarea:focus,
+[data-theme="dark"] .select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder,
+[data-theme="dark"] .input::placeholder,
+[data-theme="dark"] .textarea::placeholder {
+  color: var(--text-muted);
+}
+
+[data-theme="dark"] label,
+[data-theme="dark"] .label,
+[data-theme="dark"] .form-label {
+  color: var(--text-primary) !important;
+}
+
+/* More specific label selectors */
+[data-theme="dark"] .mainContent label,
+[data-theme="dark"] .mainContent .label,
+[data-theme="dark"] .mainContent .form-label,
+[data-theme="dark"] .loginBox label,
+[data-theme="dark"] .loginBox .label,
+[data-theme="dark"] .loginBox .form-label {
+  color: var(--text-primary) !important;
+}
+
+/* Ultra specific label selectors for all pages */
+[data-theme="dark"] body label,
+[data-theme="dark"] body .label,
+[data-theme="dark"] body .form-label,
+[data-theme="dark"] div label,
+[data-theme="dark"] div .label,
+[data-theme="dark"] div .form-label,
+[data-theme="dark"] form label,
+[data-theme="dark"] form .label,
+[data-theme="dark"] form .form-label {
+  color: var(--text-primary) !important;
+}
+
+/* Dark mode for amount and currency inputs */
+[data-theme="dark"] input[type="number"],
+[data-theme="dark"] input[type="text"],
+[data-theme="dark"] .amountInput,
+[data-theme="dark"] .currencyInput,
+[data-theme="dark"] .amount-input,
+[data-theme="dark"] .currency-input {
+  color: var(--text-primary) !important;
+  border-color: var(--border-light) !important;
+}
+
+[data-theme="dark"] input[type="number"]:focus,
+[data-theme="dark"] input[type="text"]:focus,
+[data-theme="dark"] .amountInput:focus,
+[data-theme="dark"] .currencyInput:focus,
+[data-theme="dark"] .amount-input:focus,
+[data-theme="dark"] .currency-input:focus {
+  border-color: var(--primary-color) !important;
+  outline: none !important;
+}
+
+[data-theme="dark"] input[type="number"]::placeholder,
+[data-theme="dark"] input[type="text"]::placeholder,
+[data-theme="dark"] .amountInput::placeholder,
+[data-theme="dark"] .currencyInput::placeholder,
+[data-theme="dark"] .amount-input::placeholder,
+[data-theme="dark"] .currency-input::placeholder {
+  color: var(--text-muted) !important;
+}
+
+/* Dark mode for specific AddKassa components */
+[data-theme="dark"] .inputGroup {
+  border-color: var(--border-muted) !important;
+}
+
+[data-theme="dark"] .inputGroup:focus-within {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 3px rgba(184, 3, 12, 0.2) !important;
+}
+
+[data-theme="dark"] .inputGroup input {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .currencySelectWrapper {
+  border-left-color: var(--border-light) !important;
+}
+
+[data-theme="dark"] .currencySelectWrapper .selectTrigger {
+  background-color: var(--bg-light) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .currencySelectWrapper .selectTrigger:hover {
+  background-color: var(--bg-container) !important;
+}
+
+[data-theme="dark"]
+  .currencySelectWrapper
+  .selectWrapper[data-is-open="true"]
+  .selectTrigger {
+  background-color: var(--bg-container) !important;
+}
+
+/* Dark mode for noBorderLeft class */
+[data-theme="dark"] .noBorderLeft .selectTrigger {
+  background-color: var(--bg-light) !important;
+  border-left-color: var(--border-light) !important;
+}
+
+[data-theme="dark"] .noBorderLeft .selectTrigger:hover {
+  background-color: var(--bg-container) !important;
+  border-left-color: var(--border-light) !important;
+}
+
+.required-star {
+  color: var(--primary-color);
+  margin-left: 4px;
+  font-weight: bold;
+}
+
+[data-theme="dark"] .required-star {
+  color: var(--text-primary);
+}

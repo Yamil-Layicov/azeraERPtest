@@ -1,0 +1,91 @@
+.panelContainer {
+  max-width: 100%;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-paper); 
+  padding: 0 0 1rem 0;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem; 
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.panelTitle {
+  font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary, #111827);
+    margin: 0;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  color: var(--text-muted);
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtn:hover {
+  background-color: var(--bg-container);
+  color: var(--text-primary);
+}
+
+.closeIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.panelBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow-y: auto;
+  margin-top: 0;
+}
+
+.panelHeader + .panelBody {
+  margin-top: 1rem;
+} 
+
+.checkboxWrapper {
+  margin-top: 1rem;
+}
+
+.panelFooter {
+  display: flex;
+  gap: 0.75rem; 
+  justify-content: flex-end; 
+}
+
+.panelButton {
+  padding: 0.3rem 1rem !important; 
+  font-size: 0.8rem !important; 
+  height: 36px !important; 
+  min-width: 100px; 
+}
+
+:global([data-theme="dark"]) .panelContainer {
+  background-color: transparent;
+  border: none;
+}
+:global([data-theme="dark"]) .panelHeader {
+  border-color: var(--border-muted);
+}
+:global([data-theme="dark"]) .panelTitle {
+  color: var(--text-primary);
+}
+
+.formGroup {
+  margin-bottom: 0.25rem;
+}

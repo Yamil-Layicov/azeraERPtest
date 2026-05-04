@@ -1,0 +1,145 @@
+import type { PendingRFQItem, ActiveRFQ, Vendor } from "./types";
+
+export const mockPendingItems: PendingRFQItem[] = [
+  {
+    id: "item-1",
+    prId: "1",
+    prNo: "PR-0012",
+    itemName: "10 ədəd Lenovo ThinkPad noutbuku",
+    requestedQty: 10,
+    requester: "Turan Həsənov",
+    department: "İT",
+    approvedDate: "2026-03-05T10:00:00Z",
+  },
+  {
+    id: "item-2",
+    prId: "2",
+    prNo: "PR-0013",
+    itemName: "A4 Formatlı Kopya Kağızı (500 ədədlik qutu)",
+    requestedQty: 50,
+    requester: "Aygün Məmmədova",
+    department: "HR",
+    approvedDate: "2026-03-04T12:30:00Z",
+  },
+  {
+    id: "item-3",
+    prId: "3",
+    prNo: "PR-0014",
+    itemName: "Erqonomik Ofis Kreslosu",
+    requestedQty: 5,
+    requester: "Nəriman Əliyev",
+    department: "Maliyyə",
+    approvedDate: "2026-03-06T09:15:00Z",
+  },
+];
+
+export const mockActiveRFQs: ActiveRFQ[] = [
+  {
+    id: "rfq-1",
+    rfqNo: "RFQ-26-001",
+    title: "İT Şöbəsi üçün Şəbəkə Avadanlıqları",
+    deadline: "2026-03-15T18:00:00Z",
+    vendorCount: 4,
+    status: "published",
+    deliveryTerms: "Sifarişçinin anbarına çatdırılma",
+    warranty: "1 il",
+    notes: "Təcili",
+    vendorBids: [
+      {
+        id: "b1",
+        vendorId: "v1",
+        vendorName: "TechStore MMC",
+        status: "submitted",
+        amount: 4500,
+        currency: "AZN",
+        date: "2026-03-05T14:20:00Z",
+      },
+      {
+        id: "b2",
+        vendorId: "v2",
+        vendorName: "Baku Computers",
+        status: "viewed",
+      },
+      {
+        id: "b3",
+        vendorId: "v3",
+        vendorName: "AzTech Solutions",
+        status: "unread",
+      },
+      {
+        id: "b4",
+        vendorId: "v4",
+        vendorName: "MegaMart LLC",
+        status: "declined",
+        date: "2026-03-04T09:15:00Z",
+      },
+    ],
+  },
+  {
+    id: "rfq-2",
+    rfqNo: "RFQ-26-002",
+    title: "Yeni ofis üçün mebellər",
+    deadline: "2026-03-10T18:00:00Z",
+    vendorCount: 2,
+    status: "closed",
+    deliveryTerms: "Təchizatçının ofisindən təhvil alma",
+    warranty: "2 il",
+    vendorBids: [
+      {
+        id: "b5",
+        vendorId: "v5",
+        vendorName: "Ofis Ləvazimatları QSC",
+        status: "submitted",
+        amount: 12000,
+        currency: "AZN",
+        date: "2026-03-09T11:00:00Z",
+      },
+      {
+        id: "b6",
+        vendorId: "v1",
+        vendorName: "TechStore MMC",
+        status: "submitted",
+        amount: 13500,
+        currency: "AZN",
+        date: "2026-03-08T16:45:00Z",
+      },
+    ],
+  },
+  {
+    id: "rfq-3",
+    rfqNo: "RFQ-26-003",
+    title: "Reklam materiallarının çapı",
+    deadline: "2026-03-20T18:00:00Z",
+    vendorCount: 3,
+    status: "draft",
+    deliveryTerms: "Sifarişçinin anbarına çatdırılma",
+    vendorBids: [
+      {
+        id: "b7",
+        vendorId: "v2",
+        vendorName: "Baku Computers",
+        status: "unread",
+      },
+      {
+        id: "b8",
+        vendorId: "v3",
+        vendorName: "AzTech Solutions",
+        status: "unread",
+      },
+      {
+        id: "b9",
+        vendorId: "v4",
+        vendorName: "MegaMart LLC",
+        status: "unread",
+      },
+    ],
+  },
+];
+
+export const mockVendors: Vendor[] = [
+  { id: "v1", name: "TechStore MMC", contactPerson: "Taleh Qasımov" },
+  { id: "v2", name: "Baku Computers", contactPerson: "Elvin Rzayev" },
+  { id: "v3", name: "AzTech Solutions", contactPerson: "Leyla Kərimova" },
+  { id: "v4", name: "MegaMart LLC", contactPerson: "Samir Əliyev" },
+  { id: "v5", name: "Ofis Ləvazimatları QSC", contactPerson: "Günay Həsənova" },
+];

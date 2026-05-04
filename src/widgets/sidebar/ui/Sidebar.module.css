@@ -1,0 +1,459 @@
+/* --- SIDEBAR CONTAINER --- */
+.sidebar {
+  width: 250px;
+  background-color: var(--bg-sidebar);
+  padding: 1rem 0;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+  position: fixed;
+  left: 2rem;
+  top: calc(5rem + 1.5rem);
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 100;
+  transition:
+    transform 0.3s ease,
+    width 0.3s ease;
+  border-radius: var(--radius-md);
+  height: calc(100vh - 136px);
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+.sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.sidebar nav {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.navContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bottomNavList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.submenu::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.submenu::-webkit-scrollbar-track {
+  background: transparent;
+}
+.submenu::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 2px;
+}
+.submenu {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.navList > li {
+  position: relative;
+}
+
+/* --- NAV ITEM BASIC --- */
+.navItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  width: calc(100% - 1rem);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 6px;
+  margin: 0 0.5rem;
+  font-family: inherit;
+  font-size: 14px;
+  overflow: hidden; /* Daşmanın qarşısını almaq üçün */
+}
+
+.navItemContent {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0; /* Flex item overflow fix */
+  flex: 1; /* Mətnin yer tutması üçün */
+}
+
+.icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+.arrowIcon {
+  width: 1rem;
+  height: 1rem;
+  color: #6b7280;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+.arrowOpen {
+  transform: rotate(180deg);
+}
+
+/* --- LABEL: standart ellipsis — yalnız overflow olanlarda "..." görünür --- */
+.labelText {
+  display: block;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+/* --- STATES --- */
+/* .navItem {
+  transition: all 0.25s ease-in-out;
+} */
+
+/* 1. Hover State (Mətn rəngi dəyişmir, yalnız çox zəif, göz yormayan arxaplan) */
+.navItem:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.navItem.parentActive {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #64748b;
+  font-weight: 600;
+}
+.navItem.parentActive .icon,
+.navItem.parentActive .arrowIcon {
+  color: #64748b;
+}
+
+.navItem.active {
+  background-color: rgba(0, 0, 0, 0.07);
+  color: #475569;
+  font-weight: 600;
+}
+.navItem.active .icon {
+  color: #475569;
+}
+
+:global([data-theme="dark"]) .sidebar .navItem,
+:global([data-theme="dark"]) .sidebar .navItem .icon,
+:global([data-theme="dark"]) .sidebar .navItem .arrowIcon {
+  color: #ffffff !important;
+}
+
+:global([data-theme="dark"]) .sidebar .navItem:hover {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: #ffffff !important;
+}
+:global([data-theme="dark"]) .sidebar .navItem:hover .icon,
+:global([data-theme="dark"]) .sidebar .navItem:hover .arrowIcon,
+:global([data-theme="dark"]) .sidebar .navItem:hover .labelText {
+  color: #ffffff !important;
+}
+
+/* Parent Active Dark */
+:global([data-theme="dark"]) .sidebar .navItem.parentActive {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+:global([data-theme="dark"]) .sidebar .navItem.parentActive .icon,
+:global([data-theme="dark"]) .sidebar .navItem.parentActive .arrowIcon {
+  color: #ffffff !important;
+}
+
+/* Exact Active Dark */
+:global([data-theme="dark"]) .sidebar .navItem.active {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+}
+:global([data-theme="dark"]) .sidebar .navItem.active .icon {
+  color: #ffffff !important;
+}
+
+.menuItemSeparator {
+  margin-top: 15px;
+}
+
+/* --- SUBMENU --- */
+.submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Submenu items also need text logic */
+/* Inherits .navItem styles, so logic applies automatically */
+
+/* --- EXPANDED SIDEBAR BEHAVIOR --- */
+.sidebar:not(.sidebarCollapsed) .submenu {
+  padding-left: 0.5rem;
+  margin-top: 0;
+  border-left: 2px solid #e5e7eb;
+  margin-left: 1.5rem;
+  display: none;
+  transition: margin-top 0.3s ease;
+  max-width: calc(100% - 1.5rem);
+}
+.sidebar:not(.sidebarCollapsed) .submenu.submenuOpen {
+  display: block;
+  margin-top: 0.5rem;
+}
+.sidebar:not(.sidebarCollapsed) .submenu .submenu {
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+  border-left: 2px solid #d1d5db;
+  max-width: calc(100% - 0.5rem);
+}
+
+/* ==========================================================================
+   COLLAPSED SIDEBAR (POPOVER)
+   ========================================================================== */
+.sidebarCollapsed {
+  width: 70px;
+  overflow: visible !important;
+}
+.sidebarCollapsed .navItem {
+  justify-content: center;
+  padding: 0.75rem 0;
+}
+.sidebarCollapsed .navItemContent {
+  gap: 0;
+  justify-content: center;
+}
+.sidebarCollapsed .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 !important;
+  opacity: 1 !important;
+}
+
+/* Hide text and arrows in collapsed root */
+.sidebarCollapsed > nav > .navList > li > .navItem .navItemContent .labelText,
+.sidebarCollapsed > nav > .navList > li > button.navItem > .arrowIcon {
+  display: none !important;
+}
+
+.sidebarCollapsed li {
+  position: relative;
+}
+
+/* Popover Styles */
+.sidebarCollapsed .submenu {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 5px;
+  overflow: visible;
+  min-width: 200px;
+  max-width: 300px;
+  width: max-content;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem;
+  z-index: 10000;
+  border-left: none !important;
+  transform: translateX(-5px);
+}
+
+/* Popover Dark Mode */
+:global([data-theme="dark"]) .sidebarCollapsed .submenu {
+  background-color: #121212;
+  border-color: #374151;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.sidebarCollapsed li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -17px;
+  width: 17px;
+  height: 100%;
+  background: transparent;
+  pointer-events: auto;
+}
+
+.sidebarCollapsed li:hover > .submenu {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.sidebarCollapsed .submenu .submenu {
+  top: 5px;
+  left: 100%;
+  margin-left: 12px;
+  z-index: 10001;
+  overflow: visible;
+  max-width: 300px;
+}
+
+/* Force text visibility inside Popover */
+.sidebarCollapsed .submenu .navItemContent .labelText {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  width: auto !important;
+  color: var(--text-primary, #374151) !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  animation: none !important;
+}
+:global([data-theme="dark"])
+  .sidebar.sidebarCollapsed
+  .submenu
+  .navItemContent
+  .labelText {
+  color: #ffffff !important;
+}
+
+.sidebarCollapsed .submenu .arrowIcon {
+  display: block !important;
+  opacity: 1 !important;
+  width: 1rem !important;
+  height: 1rem !important;
+  transform: rotate(-90deg);
+}
+
+.sidebarCollapsed .submenu .navItem {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0.75rem;
+  width: 100%;
+  margin: 0;
+  white-space: nowrap;
+  color: #374151;
+  border-radius: 6px;
+}
+.sidebarCollapsed .submenu .navItem:hover {
+  background-color: #f3f4f6;
+}
+:global([data-theme="dark"]) .sidebar.sidebarCollapsed .submenu .navItem {
+  color: #ffffff !important;
+}
+:global([data-theme="dark"]) .sidebar.sidebarCollapsed .submenu .navItem:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff !important;
+}
+:global([data-theme="dark"])
+  .sidebar.sidebarCollapsed
+  .submenu
+  .navItem:hover
+  .icon,
+:global([data-theme="dark"])
+  .sidebar.sidebarCollapsed
+  .submenu
+  .navItem:hover
+  .arrowIcon,
+:global([data-theme="dark"])
+  .sidebar.sidebarCollapsed
+  .submenu
+  .navItem:hover
+  .labelText {
+  color: #ffffff !important;
+}
+
+.sidebarCollapsed .submenu .navItemContent {
+  display: flex !important;
+  gap: 0.75rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+.sidebarCollapsed .submenu .icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex-shrink: 0;
+  color: #6b7280;
+}
+:global([data-theme="dark"]) .sidebar.sidebarCollapsed .submenu .navItem .icon,
+:global([data-theme="dark"])
+  .sidebar.sidebarCollapsed
+  .submenu
+  .navItem
+  .arrowIcon {
+  color: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 4rem;
+    bottom: 0;
+    height: calc(100vh - 4rem);
+    width: 250px;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+    z-index: 100;
+    border-radius: 0;
+    margin: 0;
+  }
+  .sidebar.sidebarCollapsed {
+    transform: translateX(-100%);
+    width: 250px;
+  }
+  .sidebarCollapsed .navItemContent .labelText,
+  .sidebarCollapsed .arrowIcon {
+    opacity: 1;
+    pointer-events: auto;
+    display: block !important;
+  }
+  .sidebarCollapsed .submenu {
+    position: static;
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+    width: auto;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    display: none;
+  }
+}

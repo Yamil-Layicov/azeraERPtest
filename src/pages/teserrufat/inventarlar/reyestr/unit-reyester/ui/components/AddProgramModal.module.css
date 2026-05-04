@@ -1,0 +1,131 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px 8px;
+}
+
+.modalTitleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.titleIconContainer {
+  padding: 8px;
+  background-color: rgba(184, 3, 12, 0.1);
+  border-radius: 8px;
+  display: flex;
+}
+
+.titleIcon {
+  color: var(--primary-color);
+  font-size: 22px;
+}
+
+.modalTitle {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 2px;
+}
+
+.subLabel {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.imageSection {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.imageSubTitle {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  align-self: flex-end;
+  margin-top: -18px;
+}
+
+.imageWarning {
+  background-color: #e0f7fa;
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #00838f;
+  margin-bottom: 12px;
+  font-size: 12px;
+}
+
+:global([data-theme="dark"]) .imageWarning {
+  background-color: rgba(0, 131, 143, 0.1);
+  color: #4dd0e1;
+}
+
+.warningIcon {
+  font-size: 18px;
+  color: #00838f;
+}
+
+.imagePlaceholder {
+  border: 1.5px solid var(--border-light);
+  border-radius: 12px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  background-color: var(--bg-primary);
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+:global([data-theme="dark"]) .imagePlaceholder {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+@media (max-width: 768px) {
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

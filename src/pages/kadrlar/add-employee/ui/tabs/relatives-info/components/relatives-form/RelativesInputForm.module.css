@@ -1,0 +1,164 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: stretch;
+  min-width: 0;
+  min-height: 74px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.field :global(label) {
+  display: none;
+}
+.field > div {
+  margin-top: 0;
+  gap: 0;
+}
+
+.container :global(label),
+.label {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: #344054;
+  display: block;
+  min-height: 1.25rem;
+  line-height: 1.25rem;
+}
+:global([data-theme="dark"]) .container :global(label),
+:global([data-theme="dark"]) .label {
+  color: var(--text-black);
+}
+
+.container :global(input) {
+  font-weight: 400 !important;
+  font-size: 14px;
+  color: #101828;
+}
+.container :global(input::placeholder) {
+  font-weight: 400 !important;
+  font-size: 14px;
+  color: #667085;
+  opacity: 1;
+}
+
+.container :global(span[data-placeholder="true"]) {
+  font-weight: 400 !important;
+  font-size: 14px;
+  color: #667085;
+  opacity: 1;
+}
+.container
+  :global(
+    button[aria-haspopup="listbox"]
+      > span:first-of-type:not([data-placeholder="true"])
+  ) {
+  font-weight: 400 !important;
+  font-size: 14px;
+  color: #101828;
+}
+
+.rowOne {
+  display: flex;
+  align-items: center; /* Centered relative to compact field height */
+  gap: 24px;
+}
+@media (max-width: 950px) {
+  .rowOne {
+    flex-direction: column-reverse;
+  }
+}
+
+.selectWrapper {
+  width: calc((100% - 32px) * 0.38);
+  @media (max-width: 950px) {
+    width: 100%;
+  }
+}
+
+.checkboxGroup {
+  display: grid;
+  /* İlk başda (böyük ekranlarda) 4 sütun yan-yana */
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+/* 768px və daha kiçik ekranlar üçün */
+@media (max-width: 768px) {
+  .checkboxGroup {
+    /* 2 sütun yan-yana */
+    grid-template-columns: repeat(2, 1fr);
+    /* Elementləri kənarlara sıxışdırıb ortada boşluq saxlamaq üçün */
+    justify-content: space-between;
+  }
+}
+.checkboxItems {
+  display: flex;
+  align-items: flex-start;
+  gap: 55px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0px;
+  }
+}
+
+.checkboxItems .field {
+  flex: 1;
+}
+.checkboxItemMargin {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.gridThree,
+.gridTwo {
+  display: grid;
+  grid-template-columns: 1.22fr 1fr 1fr;
+  gap: 12px;
+  align-items: start;
+}
+@media (max-width: 1150px) {
+  .gridThree {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+@media (max-width: 1050px) {
+  .gridThree {
+    grid-template-columns:  1fr;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.addButton,
+.clearButton,
+.sharedButton {
+  height: 40px;
+  min-height: 40px;
+  padding: 0 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}

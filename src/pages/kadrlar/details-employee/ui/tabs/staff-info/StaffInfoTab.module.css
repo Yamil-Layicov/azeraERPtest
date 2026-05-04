@@ -1,0 +1,76 @@
+.container {
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Labellar: digər tablarla eyni – 14px, font-weight 400 */
+.container label,
+.label {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: #344054;
+  margin-bottom: 0.2rem;
+}
+
+.formGrid {
+  margin-top: 1.5rem; 
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 0;
+}
+
+/* Input / Select daxilindəki dəyər və placeholder incə */
+.container :global(input),
+.container :global(input::placeholder) {
+  font-weight: 400 !important;
+  font-size: 14px;
+}
+.container :global(input) {
+  color: #101828;
+}
+.container :global(input::placeholder) {
+  color: #667085;
+  opacity: 1;
+}
+.container :global(span[data-placeholder="true"]) {
+  font-weight: 400 !important;
+  font-size: 14px;
+  color: #667085;
+  opacity: 1;
+}
+.container :global(button[aria-haspopup="listbox"] > span:first-of-type:not([data-placeholder="true"])) {
+  font-weight: 400 !important;
+  font-size: 14px;
+  color: #101828;
+}
+
+@media (max-width: 1024px) {
+  .formGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+    gap: 1.25rem;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+}
+

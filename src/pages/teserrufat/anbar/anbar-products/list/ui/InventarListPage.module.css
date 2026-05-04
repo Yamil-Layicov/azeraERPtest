@@ -1,0 +1,298 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.buttonGroup{
+  display: flex;
+  gap: 0.5rem;
+}
+.addButton{
+  padding: 0.3rem 1rem;
+}
+.changesButton{
+  padding: 0.3rem 1rem;
+  background-color: transparent;
+  background-color: rgba(255, 255, 0, 0.356);
+}
+.changesButton:hover{
+  background-color: rgba(255, 255, 0, 0.356) !important; 
+}
+.transferButton{
+  padding: 0.3rem 1rem;
+  background-color: transparent;
+  background-color: rgba(128, 228, 128, 0.459)!important; 
+}
+.transferButton:hover{
+  background-color: rgba(128, 228, 128, 0.459)!important; 
+}
+
+
+
+.statCard {
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 1px solid #e2e8f0;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.clickableCard {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.clickableCard::after {
+  content: "Detallara bax";
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.75rem;
+  color: #3b82f6;
+  opacity: 0;
+  transition: opacity 0.2s;
+  font-weight: 600;
+}
+
+.clickableCard:hover::after {
+  opacity: 1;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.statValue {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.statTrend {
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.trendNegative {
+  color: #ef4444;
+}
+.trendPositive {
+  color: #10b981;
+}
+.trendNeutral {
+  color: #64748b;
+}
+
+.tableCard {
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.tableToolbar {
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.toolbarLeft {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex: 1;
+}
+
+.searchWrapper {
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+}
+
+.toolbarRight {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.filterBtn {
+  max-height: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.paginationRow {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.exportBtn {
+  background-color: none;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.skuColumn,
+.nameColumn,
+.locationColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.skuText {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.barcodeText,
+.locationName {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.itemName {
+  font-weight: 500;
+  color: #334155;
+}
+
+.categoryBadge {
+  font-size: 0.7rem;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.warehouseName {
+  font-weight: 500;
+  color: #475569;
+}
+
+.lotSerialText {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8125rem;
+  color: #64748b;
+}
+
+.qtyColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.qtyMain {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.onHandValue {
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 1rem;
+}
+
+.unitText {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.allocatedText {
+  font-size: 0.7rem;
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.thresholdColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100px;
+}
+
+.minMaxText {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-align: center;
+}
+
+.thresholdBar {
+  width: 100%;
+  height: 4px;
+  background: #f1f5f9;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.thresholdProgress {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.dateText {
+  font-size: 0.8125rem;
+  color: #64748b;
+}
+
+.lowStock {
+  color: #ef4444;
+  font-weight: 600;
+}
+.sufficientStock {
+  color: #10b981;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .toolbarLeft {
+    flex-wrap: wrap;
+  }
+  .searchWrapper {
+    max-width: none;
+  }
+}

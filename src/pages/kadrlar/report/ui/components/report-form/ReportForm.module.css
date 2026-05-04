@@ -1,0 +1,97 @@
+.container {
+  background-color: var(--bg-white);
+  padding: 20px 0;
+  margin-bottom: 24px;
+  color: var(--text-black);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: end;
+}
+
+.row + .row,
+.row + .rowButtons {
+  margin-top: 20px;
+}
+
+.rowButtons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btnSmall {
+  padding: 0.4rem 1rem !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.dateRangeField {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.dateRangeInputs {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.dateRangeInputs > * {
+  flex: 1;
+  min-width: 0;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+
+.required {
+  color: #dc2626;
+}
+
+.container :global(button[aria-haspopup="listbox"]),
+.container :global(input) {
+  height: auto !important;
+  min-height: 40px !important;
+  padding: 0.5rem 0.75rem !important;
+}
+
+.container :global(span[data-placeholder="true"]) {
+  color: #667085 !important;
+}
+
+.container :global(input::placeholder) {
+  color: #667085 !important;
+}
+
+@media (max-width: 900px) {
+  .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

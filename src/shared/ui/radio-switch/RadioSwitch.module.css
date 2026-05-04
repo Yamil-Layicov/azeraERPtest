@@ -1,0 +1,152 @@
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.groupLabel,
+.formGroup label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.radioSwitch {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+
+.radioSwitchLabel {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+  color: var(--text-muted);
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 5px; 
+  padding: 0 1.2rem;
+  height: 36px;
+  box-shadow: var(--shadow-sm);
+  min-width: 80px;
+  margin-left: -1px;
+}
+
+/* İlk elementin sol tərəfini yuvarlaqlaşdırırıq */
+.radioSwitchInput:first-of-type + .radioSwitchLabel {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-left: 0;
+}
+
+/* Son elementin sağ tərəfini yuvarlaqlaşdırırıq */
+.radioSwitchInput:last-of-type + .radioSwitchLabel {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.radioSwitchLabel:hover {
+  color: var(--text-secondary);
+  filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.2));
+  z-index: 3; 
+}
+
+.radioSwitchInput {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+}
+
+.radioSwitchInput:checked + .radioSwitchLabel {
+  color: var(--text-white);
+  background-color: #D64545;
+  border-color: #C0392B;
+  box-shadow: 0 4px 12px rgba(214, 69, 69, 0.3);
+  z-index: 4; /* Seçili olanda hamısından üstə olsun */
+}
+
+.radioSwitchInput:focus + .radioSwitchLabel {
+  box-shadow: none;
+  outline: none;
+}
+
+.radioSwitchInput:checked:focus + .radioSwitchLabel {
+  box-shadow: 0 4px 12px rgba(214, 69, 69, 0.3);
+  outline: none;
+}
+
+.radioSwitchMarker {
+  display: none;
+}
+
+.disabled {
+  opacity: 0.6;
+}
+
+.disabled .radioSwitchLabel {
+  cursor: not-allowed;
+}
+
+/* Dark Mode */
+:global([data-theme="dark"]) .groupLabel,
+:global([data-theme="dark"]) .formGroup label {
+  color: var(--text-primary) !important;
+}
+
+:global([data-theme="dark"]) .radioSwitchLabel {
+  background-color: var(--bg-light) !important;
+  border-color: var(--border-light) !important;
+  color: var(--text-muted) !important;
+}
+
+:global([data-theme="dark"]) .radioSwitchLabel:hover {
+  color: var(--text-primary) !important;
+  border-color: var(--border-muted) !important;
+}
+
+:global([data-theme="dark"]) .radioSwitchInput:checked + .radioSwitchLabel {
+  color: #ffffff !important;
+  background-color: #EF5350 !important; 
+  border-color: #E53935 !important;
+}
+
+@media (max-width: 768px) {
+  .formGroup {
+    align-items: center;
+    width: 100%;
+  }
+
+  .radioSwitch {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .radioSwitchLabel {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    min-width: auto;
+    padding: 0 0.5rem;
+    font-size: 0.8rem;
+  }
+}

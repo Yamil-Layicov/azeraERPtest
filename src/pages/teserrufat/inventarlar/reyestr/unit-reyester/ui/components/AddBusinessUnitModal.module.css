@@ -1,0 +1,59 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px 8px;
+}
+
+.modalTitleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.titleIconContainer {
+  padding: 8px;
+  background-color: rgba(184, 3, 12, 0.1);
+  border-radius: 8px;
+  display: flex;
+}
+
+.titleIcon {
+  color: var(--primary-color);
+  font-size: 22px;
+}
+
+.modalTitle {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 8px;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-light);
+}
+
+@media (max-width: 768px) {
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

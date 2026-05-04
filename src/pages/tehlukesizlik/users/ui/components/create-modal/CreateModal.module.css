@@ -1,0 +1,580 @@
+.modalHeaderTitle {
+  display: flex;
+  align-items: center;
+}
+
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid gray;
+  cursor: pointer;
+  padding: 3px 12px 3px 5px;
+  border-radius: 8px;
+  color: black;
+  transition: all 0.2s ease;
+  margin-right: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.backBtn:hover {
+  transform: translateY(-1px);
+}
+
+.backIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.backText {
+  line-height: 1;
+}
+.filterContainer {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .filterContainer {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+.filterControls{
+  margin-bottom: 0px !important;
+  height: 20px !important;
+}
+
+.modalLayout {
+  display: flex;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.tab1Layout {
+  min-height: 500px;
+}
+
+.tabItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab1Layout .tabItem {
+  margin-bottom: 260px;
+}
+
+.tab2Layout .tabItem {
+  margin-bottom: 30px;
+}
+
+.tabItem:last-child {
+  margin-bottom: 0;
+}
+
+.tabLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: #a0a0a0;
+  text-align: center;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.activeTab .tabLabel {
+  color: #c41212;
+  font-weight: 700;
+  transform: scale(1.05);
+}
+
+.tabIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #ff9c9c;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.activeTab .tabIcon {
+  background-color: #ff9c9c;
+  border-color: #ff9c9c;
+  box-shadow: 0 0 0 4px rgba(255, 156, 156, 0.25);
+}
+
+.activeTab .tabIcon::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: white;
+}
+
+.filterSection {
+  margin-bottom: 24px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.filterSelectWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  max-width: 150px;
+}
+
+.statustext {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.filterSelect {
+  margin-bottom: 0px;
+  padding: 0 !important;
+  flex: 1;
+}
+
+.filterSelect button {
+  height: 34px !important;
+  min-height: 34px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.tableContainer {
+  flex: 1;
+  max-height: 600px;
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-weight: 500;
+  color: #666;
+}
+
+.paginationWrapper {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.footerActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+  padding-top: 30px;
+  gap: 4px;
+  padding-right: 16px;
+}
+
+.confirmBtn {
+  background-color: #c41212 !important;
+  border-color: #c41212 !important;
+  padding: 5px 10px !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important;
+  font-size: 15px !important;
+  transition: all 0.2s ease !important;
+  height: 34px !important;
+}
+
+.confirmBtn:hover:not(:disabled) {
+  background-color: #a80f0f !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(196, 18, 18, 0.2) !important;
+}
+
+.cancelBtn {
+  background-color: gray !important;
+  padding: 5px 10px !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important;
+  font-size: 15px !important;
+  transition: all 0.2s ease !important;
+  height: 34px !important;
+}
+
+.tab2Wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.personInfoGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-radius: 8px;
+}
+
+.infoItem {
+  flex: 1 1 calc(50% - 16px);
+  display: flex;
+  gap: 4px;
+  min-width: 200px;
+}
+
+.fullWidth {
+  flex: 1 1 100% !important;
+}
+
+.infoLabel {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+.infoValue {
+  font-size: 12px;
+  color: #333;
+  font-weight: 600;
+  max-width: 300px;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.tab2Content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.formCard {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.inputWithAction {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  width: 100%;
+}
+.inputGroup {
+  width: 100% !important;
+}
+.checkWrapper {
+  display: flex;
+  align-items: center;
+  height: 34px;
+}
+
+.checkIcon {
+  color: #28a745;
+  font-size: 34px;
+  stroke-width: 0.8;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.errorIcon {
+  color: #dc3545;
+  font-size: 34px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.usernameInputV2 {
+  height: 34px !important;
+  border-radius: 6px !important;
+}
+.usernameInput {
+  flex: 1;
+  width: 100% !important;
+  height: 34px !important;
+}
+
+.usernameInput input {
+  height: 34px !important;
+  width: 100% !important;
+}
+.searchBtn {
+  background-color: transparent;
+  height: 34px !important;
+  padding: 8px !important;
+  border-radius: 6px !important;
+}
+
+.saveBtn {
+  height: 34px !important;
+  min-width: 80px;
+  font-weight: 600 !important;
+  background-color: gray !important;
+  border-color: gray !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  transition: all 0.2s ease !important;
+  padding: 0px !important;
+}
+.saveBtnV2 {
+  height: 34px !important;
+  min-width: 80px;
+  font-weight: 600 !important;
+  background-color: green !important;
+  border-color: green !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  transition: all 0.2s ease !important;
+  padding: 0px !important;
+}
+.saveBtn:hover {
+  box-shadow: none !important;
+  transform: translateY(-1px);
+}
+.saveBtnV2:hover {
+  box-shadow: none !important;
+  transform: translateY(-1px);
+}
+
+.ldapBtn {
+  margin-top: 12px;
+  width: fit-content;
+  height: 34px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  border: 1px solid #ccc !important;
+  color: #333 !important;
+}
+
+.ldapBtn:hover {
+  background-color: #f5f5f5 !important;
+  transform: translateY(-1px);
+}
+
+.cancelBtn {
+  height: 34px !important;
+  padding: 0px 10px !important;
+  color: white !important;
+}
+.cancelBtnV2 {
+  height: 34px !important;
+  padding: 0px 10px !important;
+  color: white !important;
+  background-color: gray !important;
+  border-color: gray !important;
+}
+.cancelBtnV2:hover {
+  box-shadow: none !important;
+}
+
+.errorWrapper {
+  min-height: 14px;
+  /* margin-top: 4px; */
+}
+
+.errorMessage {
+  color: #ff4d4f;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.tab2Footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.selectBtn {
+  padding: 2px 20px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  border-color: #2e7d32 !important;
+  color: #2e7d32 !important;
+  border-radius: 8px !important;
+  background-color: white !important;
+  transition: all 0.2s ease !important;
+}
+
+.selectBtn:hover {
+  background-color: #e8f5e9 !important;
+  border-color: #1b5e20 !important;
+  color: #1b5e20 !important;
+}
+
+.modalBody {
+  padding: 0.5rem 0;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.footerBtn {
+  padding: 6px 20px !important;
+  font-size: 0.85rem !important;
+  height: 36px !important;
+  min-width: 100px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.organizationUnitCell {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.organizationUnitCellWrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+} /* Tooltip-in ana konteyneri */
+.orgUnitTooltip {
+  position: fixed;
+  background-color: white;
+  color: black;
+  padding: 14px 22px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 450px;
+  z-index: 10000 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  /* Başlanğıcda gizli halı */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  /* Rəvanlıq üçün transform (bir az aşağıdan yuxarı süzülmə effekti) */
+  transform: translateY(8px);
+
+  /* Transition: hər üç xüsusiyyəti eyni vaxtda idarə edirik */
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out,
+    transform 0.3s ease-out;
+}
+
+/* Tooltip göstəriləndə tətbiq olunacaq klass */
+/* JavaScript tərəfində isVisible ? styles.active : '' kimi istifadə et */
+.orgUnitTooltip.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Öz yerinə qalxır */
+}
+
+/* Tooltip-in yuxarısındakı balaca ox (triangle) */
+.orgUnitTooltip::after {
+  content: "";
+  position: absolute;
+  bottom: 100%; /* Tooltip-in üst hissəsində dayanması üçün */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent white transparent; /* Yalnız alt tərəfi ağ (ox yuxarı baxsın) */
+}
+
+/* Əgər oxun da rəvan itməsini istəyirsənsə, o zatən ana konteynerin içində olduğu üçün
+   konteyner itəndə o da avtomatik itəcək. ::after-ə ayrıca opacity verməyə ehtiyac yoxdur. */
+/* Tooltip DOM-a daxil olan andan bu animasiya işə düşəcək */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px); /* Başlanğıcda 10px aşağıda və şəffaf */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* Öz yerinə qalxır və görünür */
+  }
+}
+
+.orgUnitTooltip {
+  position: fixed;
+  background-color: white;
+  color: black;
+  padding: 14px 22px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 450px;
+  z-index: 10000 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  pointer-events: auto; /* Klikləmək mümkün olsun */
+
+  /* Transition yerinə Animasiya istifadə edirik */
+  animation: fadeInSlide 0.3s ease-out forwards;
+
+  /* TSX-də opacity: 1 və visibility: visible yazıldığı üçün 
+     bizim animasiya 'forwards' ilə onları axırda sabit saxlayacaq */
+}
+
+/* Ox (Triangle) */
+.orgUnitTooltip::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}

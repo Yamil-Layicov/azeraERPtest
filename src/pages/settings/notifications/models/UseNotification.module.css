@@ -1,0 +1,138 @@
+.titleColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.tableTitle {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.95rem;
+}
+
+.viewsCell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.statusBadge {
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.active {
+  background: #fef2f2;
+  color: #b8030c;
+}
+.active .statusDot {
+  background: #b8030c;
+}
+
+.deactive {
+  background: #f8fafc;
+  color: #64748b;
+}
+.deactive .statusDot {
+  background: #94a3b8;
+}
+
+.tableActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.detailBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.detailBtn:hover {
+  background: #f1f5f9;
+  color: #b8030c;
+  border-color: #b8030c;
+}
+
+.tableToggleButton {
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 100px;
+}
+
+.activateBtn {
+  background: white;
+  border: 1px solid #b8030c;
+  color: #b8030c;
+}
+
+.activateBtn:hover {
+  background: #fef2f2;
+}
+
+.deactivateBtn {
+  background: white;
+  border: 1px solid #fee2e2;
+  color: #ef4444;
+}
+
+.deactivateBtn:hover {
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+.tableToggleButton {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.deactivateBtn {
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  background-color: #fef2f2;
+  height: 32px;
+}
+.deactivateBtn:hover {
+  background-color: #fecaca;
+}
+
+.activateBtn {
+  border: 1px solid #a7f3d0;
+  color: #059669;
+  background-color: #ecfdf5;
+  height: 32px;
+  
+}
+.activateBtn:hover {
+  background-color: #d4f1df;
+}
+

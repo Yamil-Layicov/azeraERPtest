@@ -1,0 +1,401 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 0.5rem;
+  overflow: visible !important;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.componentContainer {
+  margin-top: 1.5rem;
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.finInputWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  /* gap: 3px; */
+}
+
+.finInput {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px 0px 0px 8px ;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+  flex: 1;
+  box-sizing: border-box;
+  height: 40px;
+}
+
+.finInput:focus {
+  outline: none;
+  border-color: #5B9BD1;
+  box-shadow: none;
+  transition: border-color 0.2s;
+}
+
+.finInput:hover {
+  border-color: var(--border-muted);
+  transition: border-color 0.2s;
+}
+
+.finInput:disabled {
+  background-color: var(--bg-container);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.clearAllButton {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-light);
+  /* border-radius: 8px; */
+  background-color: var(--bg-white);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.clearAllButton:hover:not(:disabled) {
+  background-color: #fef2f2;
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.clearAllButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.clearAllIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.axtarButton {
+  width: 100px;
+  height: 40px;
+  padding: 0 !important;
+  font-size: 0.9rem !important;
+  border-radius: 0px 8px 8px 0px !important;
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  border: none !important;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.axtarButton:hover {
+  background-color: var(--primary-hover) !important;
+  box-shadow: var(--shadow-primary) !important;
+}
+
+:global([data-theme="dark"]) .finInput {
+  border-color: var(--border-muted);
+}
+
+:global([data-theme="dark"]) .axtarButton {
+  background-color: #dc2626 !important;
+}
+
+:global([data-theme="dark"]) .axtarButton:hover {
+  background-color: #b91c1c !important;
+}
+
+:global([data-theme="dark"]) .clearAllButton {
+  background-color: var(--bg-container);
+  border-color: var(--border-muted);
+  color: var(--text-muted);
+}
+
+:global([data-theme="dark"]) .clearAllButton:hover:not(:disabled) {
+  background-color: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.errorMessage {
+  color: #dc2626;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+:global([data-theme="dark"]) .errorMessage {
+  color: #ef4444;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--border-light);
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.contactsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: visible !important;
+  position: relative;
+}
+
+.contactRow {
+  display: flex;
+  align-items: flex-end; /* Sənəd inputları üçün vacibdir */
+  gap: 1rem;
+  flex-wrap: wrap; /* Document üçün vacibdir */
+}
+
+.contactRow:focus-within {
+  z-index: 1000 !important;
+}
+
+/* Document Specific Styles - Desktop */
+.docTypeWrapper {
+  flex: 1;
+  min-width: 200px;
+}
+.docSeriesWrapper {
+  flex: 0.6;
+  min-width: 80px;
+}
+.docNumberWrapper {
+  flex: 1.4;
+  min-width: 160px;
+}
+.docDateWrapper {
+  flex: 1;
+  min-width: 120px;
+}
+
+/* General Contact Styles */
+.contactSelect {
+  flex: 0 0 200px;
+  position: relative;
+  overflow: visible !important;
+}
+
+.contactInput {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.contactInput :global(.formGroup) {
+  margin-bottom: 0;
+}
+
+.contactInput :global(label) {
+  display: none;
+}
+
+/* Mobil: +994 həmişə görünən, yalnız 9 rəqəm yazılır */
+.mobilePrefixWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0;
+}
+
+.mobilePrefixLabel {
+  display: none;
+}
+
+.mobilePrefixInputWrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  height: 40px;
+  box-sizing: border-box;
+  background: var(--bg-white, #fff);
+  overflow: hidden;
+}
+
+.mobilePrefixInputWrap:focus-within {
+  outline: none;
+  border-color: #5B9BD1;
+  box-shadow: 0 0 0 2px rgba(91, 155, 209, 0.2);
+}
+
+.mobilePrefixInputWrap:hover {
+  border-color: var(--border-muted);
+}
+
+.mobilePrefixPrefix {
+  padding-left: 0.75rem;
+  padding-right: 0.15rem;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary, #374151);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.mobilePrefixInput {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  padding: 0.45rem 0.75rem 0.45rem 0.2rem;
+  font-size: 0.95rem;
+  font-family: 'Poppins', sans-serif;
+  background: transparent;
+}
+
+.mobilePrefixInput::placeholder {
+  color: var(--text-muted, #9ca3af);
+}
+
+:global([data-theme="dark"]) .mobilePrefixInputWrap {
+  background: var(--bg-container);
+}
+
+:global([data-theme="dark"]) .mobilePrefixPrefix {
+  color: var(--text-primary);
+}
+
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  justify-content: flex-start;
+}
+
+.contactActions {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  gap: 0.5rem;
+  margin-left: auto; /* Desktopda sağa sıxmaq üçün */
+}
+
+.removeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  background-color: #fff;
+  color: #ef4444;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.removeBtn:hover {
+  background-color: #fef2f2;
+  border-color: #ef4444;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+:global([data-theme="dark"]) .label,
+:global([data-theme="dark"]) .sectionTitle {
+  color: var(--text-primary);
+}
+
+:global([data-theme="dark"]) .removeBtn {
+  background-color: var(--bg-container);
+  border-color: var(--border-muted);
+}
+
+:global([data-theme="dark"]) .removeBtn:hover {
+  background-color: rgba(239, 68, 68, 0.2);
+  border-color: #ef4444;
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+    gap: 1.25rem;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Contact Row - Card Style */
+  .contactRow {
+    flex-direction: column;
+    align-items: stretch !important; /* Document inputs stretch */
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: var(--bg-container);
+    border-radius: 8px;
+    border: 1px solid var(--border-light);
+  }
+
+  /* Document Fields - Full Width on Mobile */
+  .docTypeWrapper,
+  .docSeriesWrapper,
+  .docNumberWrapper,
+  .docDateWrapper,
+  .contactSelect,
+  .contactInput {
+    width: 100%;
+    flex: none;
+    min-width: 0;
+  }
+  
+  /* Mobile-da Seriya və Nömrəni yan-yana qoymaq istəsən:
+     .docSeriesWrapper, .docNumberWrapper { width: 48%; display: inline-block; }
+     amma tam full-width daha səliqəlidir.
+  */
+
+  .contactActions {
+    width: 100%;
+    justify-content: flex-end;
+    border-top: 1px solid var(--border-light);
+    padding-top: 0.75rem;
+    margin-top: 0.25rem;
+    height: auto;
+    margin-left: 0;
+  }
+}
