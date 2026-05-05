@@ -4,6 +4,7 @@ import { ReportForm, type ReportFormState } from "./components/report-form";
 import { ReportTable } from "./components/report-table";
 import { useGetReport, type ReportResponse } from "@/features/kadrlar/reports";
 import { formatDateToYMD } from "@/shared/lib/utils/dateUtils";
+import { logger } from "@/shared/lib/hooks/logger";
 
 export function PersonnelReportPage() {
   const [hasSearched, setHasSearched] = useState(false);
@@ -51,7 +52,7 @@ export function PersonnelReportPage() {
       
       setReportData(response);
     } catch (error) {
-      console.error("Error fetching report:", error);
+      logger.error("Error fetching report data:", error);  
     }
   };
 

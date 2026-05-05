@@ -47,7 +47,7 @@ export const VacationTable: React.FC<VacationTableProps> = ({ data, onDelete, on
             <table className={styles.table}>
                 <thead>
                     <tr>
-                        <th className={styles.th} rowSpan={2}>NN</th>
+                        <th className={styles.th} rowSpan={2}>№</th>
                         <th className={styles.th} rowSpan={2}>Məzuniyyət növü</th>
                         <th className={styles.th} rowSpan={2}>İş ili</th>
                         <th className={styles.th} rowSpan={2}>Başlama tarixi</th>

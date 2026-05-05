@@ -1,4 +1,5 @@
 import { createStore } from "zustand/vanilla";
+import { subscribeWithSelector } from "zustand/middleware";
 
 const INITIAL_LOAD_COOLDOWN = 3000;
 
@@ -8,6 +9,7 @@ export interface TokenExpiredState {
   isModalClosed: boolean;
   pageInitializedAt: number | null;
   has401ErrorForAuthMe: boolean;
+  isCsrfInvalid: boolean;
 }
 
 export interface TokenExpiredActions {
@@ -16,6 +18,7 @@ export interface TokenExpiredActions {
   markModalClosed: () => void;
   resetState: () => void;
   setHas401ForAuthMe: (value: boolean) => void;
+  setCsrfInvalid: (value: boolean) => void;
   clear401Error: () => void;
   getCanShowModal: () => boolean;
   getHas401ErrorForAuthMe: () => boolean;
@@ -29,55 +32,64 @@ const initialState: TokenExpiredState = {
   isModalClosed: false,
   pageInitializedAt: null,
   has401ErrorForAuthMe: false,
+  isCsrfInvalid: false,
 };
 
-export const tokenExpiredStore = createStore<TokenExpiredStore>((set, get) => ({
-  ...initialState,
+export const tokenExpiredStore = createStore<TokenExpiredStore>()(
+  subscribeWithSelector((set, get) => ({
+    ...initialState,
 
-  setHandler: (handler) => {
-    set({
-      showModalHandler: handler,
-      pageInitializedAt: Date.now(),
-      has401ErrorForAuthMe: false,
-    });
-  },
+    setHandler: (handler) => {
+      set({
+        showModalHandler: handler,
+        pageInitializedAt: Date.now(),
+        has401ErrorForAuthMe: false,
+        isCsrfInvalid: false,
+      });
+    },
 
-  markModalShown: () => {
-    set({ isModalAlreadyShown: true });
-  },
+    markModalShown: () => {
+      set({ isModalAlreadyShown: true });
+    },
 
-  markModalClosed: () => {
-    set({ 
-      isModalClosed: true,
-      // has401ErrorForAuthMe: true (Zaten true olmalı, dokunmuyoruz)
-    });
-  },
+    markModalClosed: () => {
+      set({ 
+        isModalClosed: true,
+        // has401ErrorForAuthMe: true (Zaten true olmalı, dokunmuyoruz)
+      });
+    },
 
-  resetState: () => {
-    set({
-      isModalAlreadyShown: false,
-      isModalClosed: false,
-      has401ErrorForAuthMe: false,
-    });
-  },
+    resetState: () => {
+      set({
+        isModalAlreadyShown: false,
+        isModalClosed: false,
+        has401ErrorForAuthMe: false,
+        isCsrfInvalid: false,
+      });
+    },
 
-  clear401Error: () => {
-    set({ has401ErrorForAuthMe: false });
-  },
+    clear401Error: () => {
+      set({ has401ErrorForAuthMe: false });
+    },
 
-  setHas401ForAuthMe: (value) => {
-    set({ has401ErrorForAuthMe: value });
-  },
+    setHas401ForAuthMe: (value) => {
+      set({ has401ErrorForAuthMe: value });
+    },
 
-  getCanShowModal: () => {
-    const state = get();
-    if (!state.pageInitializedAt) return false;
-    const timeSince = Date.now() - state.pageInitializedAt;
-    if (timeSince < INITIAL_LOAD_COOLDOWN) return false;
-    if (state.isModalClosed) return false;
-    if (state.isModalAlreadyShown) return false;
-    return true;
-  },
+    setCsrfInvalid: (value) => {
+      set({ isCsrfInvalid: value });
+    },
 
-  getHas401ErrorForAuthMe: () => get().has401ErrorForAuthMe,
-}));
+    getCanShowModal: () => {
+      const state = get();
+      if (!state.pageInitializedAt) return false;
+      const timeSince = Date.now() - state.pageInitializedAt;
+      if (timeSince < INITIAL_LOAD_COOLDOWN) return false;
+      if (state.isModalClosed) return false;
+      if (state.isModalAlreadyShown) return false;
+      return true;
+    },
+
+    getHas401ErrorForAuthMe: () => get().has401ErrorForAuthMe,
+  }))
+);

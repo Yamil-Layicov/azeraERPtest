@@ -143,8 +143,8 @@
         const errorData = error.response?.data;
         if (errorData?.errorCode === 'antiforgery_invalid') {
           tokenStorage.remove();
-          toast.error('CSRF Token yenilənir...');
-          setTimeout(() => window.location.reload(), 1000);
+          toast.error('Təhlükəsizlik nişanı yenilənir...');
+          tokenExpiredStore.getState().setCsrfInvalid(true);
         } else {
           toast.error("İcazəniz yoxdur");
         }

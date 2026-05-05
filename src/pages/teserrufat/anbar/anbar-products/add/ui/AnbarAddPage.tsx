@@ -11,6 +11,7 @@ import {
 } from "@/shared/ui";
 import type { ColumnDef, Option } from "@/shared/types";
 import styles from "./AnbarAddPage.module.css";
+import { logger } from "@/shared/lib/hooks/logger";
 
 // --- MOCK DATA ---
 const MOCK_POS = [
@@ -149,9 +150,8 @@ export default function AnbarAddPage() {
       replace([]);
     }
   };
-
   const onSubmit = (data: GRNForm) => {
-    console.log("GRN Submit Data (Mock):", data);
+    logger.error("GRN Submit Data (Mock):", data);
     alert("Məlumatlar yadda saxlanıldı (Mock)!\nKonsola baxın.");
   };
 

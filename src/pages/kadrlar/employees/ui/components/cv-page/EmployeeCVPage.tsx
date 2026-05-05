@@ -9,6 +9,7 @@ import { useFormatDate } from "@/shared/hooks";
 import toast from "react-hot-toast";
 import { getBackendErrorMessage } from "@/shared/api/httpClient";
 import type { AxiosError } from "axios";
+import { logger } from "@/shared/lib/hooks/logger";
 
 export const EmployeeCVPage: React.FC<{ id?: string; onLoaded?: () => void }> = ({
   id: propId,
@@ -64,7 +65,7 @@ export const EmployeeCVPage: React.FC<{ id?: string; onLoaded?: () => void }> = 
           setIsDataLoaded(true);
         })
         .catch((err) => {
-          console.log("Error fetching employee print data:", err);
+          logger.error("Error fetching employee print data:", err);
           setIsDataLoaded(true); 
           toast.error(getBackendErrorMessage(err as AxiosError) || "Məlumat yüklənərkən xəta baş verdi");
         })

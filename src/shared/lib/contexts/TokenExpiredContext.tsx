@@ -13,7 +13,7 @@ interface TokenExpiredContextType {
 }
 
 const TokenExpiredContext = createContext<TokenExpiredContextType | undefined>(undefined);
-
+ /* eslint-disable react-refresh/only-export-components */
 export const useTokenExpired = () => {
   const context = useContext(TokenExpiredContext);
   if (!context) {
@@ -70,6 +70,22 @@ export const TokenExpiredProvider: React.FC<TokenExpiredProviderProps> = ({ chil
     resetTokenExpiredState();
     logout();
   }, [logout]);
+
+  // CSRF geçersiz olduğunda sayfayı kontrollü yenile
+  useEffect(() => {
+    const unsub = tokenExpiredStore.subscribe(
+      (state) => state.isCsrfInvalid,
+      (isInvalid) => {
+        if (isInvalid) {
+          // Bir saniye bekleyip yenile (kullanıcı toast mesajını görebilsin)
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
+        }
+      }
+    );
+    return () => unsub();
+  }, []);
 
   return (
     <TokenExpiredContext.Provider value={{ showModal, hideModal, isModalOpen }}>

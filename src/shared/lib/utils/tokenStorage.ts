@@ -1,7 +1,21 @@
 
+import { AUTH_CONFIG } from '@/shared/config/consts';
+
 const XSRF_TOKEN_KEY = 'xsrf-token';
 
 export const tokenStorage = {
+  getAccessToken: (): string | null => {
+    return localStorage.getItem(AUTH_CONFIG.TOKEN_KEY);
+  },
+
+  setAccessToken: (token: string): void => {
+    localStorage.setItem(AUTH_CONFIG.TOKEN_KEY, token);
+  },
+
+  removeAccessToken: (): void => {
+    localStorage.removeItem(AUTH_CONFIG.TOKEN_KEY);
+  },
+
   get: (): string | null => {
     return localStorage.getItem(XSRF_TOKEN_KEY);
   },

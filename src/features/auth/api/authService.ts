@@ -39,6 +39,10 @@ const AUTH_ENDPOINTS = {
 } as const;
 
 export const authService = {
+  setToken: (token: string): void => {
+    tokenStorage.setAccessToken(token);
+  },
+
   getAntiForgery: async (signal?: AbortSignal): Promise<void> => {
     const response = await httpClient.get(AUTH_ENDPOINTS.ANTI_FORGERY, {
       signal,

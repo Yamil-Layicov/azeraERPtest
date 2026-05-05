@@ -23,6 +23,7 @@ import type { LdapUser } from "@/pages/kadrlar/employee-shared/ui/ldap-search-mo
 import { getBackendErrorMessage } from "@/shared/api/httpClient";
 import type { AxiosError } from "axios";
 import { useRootCompaniesLookup } from "@/features/kadrlar/departments";
+import { logger } from "@/shared/lib/hooks/logger";
 
 const NewUserModal = ({
   isOpen,
@@ -82,7 +83,7 @@ const NewUserModal = ({
           setTotalCount(response.result.totalCount);
         }
       } catch (error) {
-        console.error("Error fetching employees:", error);
+        logger.error("Error fetching employees:", error);
       } finally {
         setIsLoading(false);
       }
